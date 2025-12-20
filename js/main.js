@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded',function(){
   const navToggle=document.getElementById('navToggle');
   const siteNav=document.getElementById('siteNav');
   const siteHeader=document.querySelector('.site-header');
+  const logo=document.querySelector('.logo');
   
   navToggle.addEventListener('click',()=>{
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -17,6 +18,17 @@ document.addEventListener('DOMContentLoaded',function(){
       siteHeader.classList.remove('scrolled');
     }
   });
+
+  // Rotating name in navbar
+  const names = ['tahir_dars', 'Muhammad Tahir', 'Dars Ali'];
+  let nameIndex = 0;
+  
+  if(logo) {
+    setInterval(function(){
+      logo.textContent = names[nameIndex];
+      nameIndex = (nameIndex + 1) % names.length;
+    }, 1500);
+  }
 
   // Scroll effect for left side details
   const detailsEl = document.getElementById('details');
