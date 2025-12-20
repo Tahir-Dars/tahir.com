@@ -34,6 +34,11 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #
 .hero-left{width:50%;position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:flex-start;padding-left:2rem;background:linear-gradient(135deg,rgba(15,23,36,0.95),rgba(7,16,37,0.95))}
 .hero-sticky{width:100%}
 .hero-right{width:50%;overflow-y:auto;padding:4rem 2rem;display:flex;flex-direction:column}
+.about-heading{font-size:2rem;margin:0 0 2rem 0;color:var(--text)}
+.about-content{color:var(--text);line-height:1.8;font-size:0.95rem}
+.about-content p{margin:0 0 1.2rem 0;color:var(--muted)}
+.tech-badge{display:inline-flex;align-items:center;gap:0.4rem}
+.tech-logo{width:14px;height:14px;vertical-align:middle}
 .hero h1{font-size:clamp(1.6rem,4vw,2.8rem);margin:0;margin-bottom:2rem}
 .job-title{font-size:0.95rem;color:var(--muted);margin:0;margin-bottom:1rem}
 .profile-image-container{width:220px;height:220px;margin:0 0 1.5rem 71px;border-radius:50%;overflow:hidden;border:4px solid var(--accent);box-shadow:0 0 30px rgba(125,211,252,0.3),inset 0 0 30px rgba(125,211,252,0.1);background:linear-gradient(135deg,rgba(125,211,252,0.1),rgba(96,165,250,0.05));display:flex;align-items:center;justify-content:center}
