@@ -19,13 +19,19 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 
-  // Rotating name in navbar
+  // Rotating name in navbar with different font styles
   const names = ['tahir_dars', 'Muhammad Tahir', 'Dars Ali'];
+  const fontStyles = [
+    'font-family: "ITC Benguiat", serif; font-weight: 700; font-size: 1.1em;',
+    'font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 1em;',
+    'font-family: "Georgia", serif; font-weight: 700; font-size: 1.05em; font-style: italic;'
+  ];
   let nameIndex = 0;
   
   if(logo) {
     setInterval(function(){
       logo.textContent = names[nameIndex];
+      logo.style.cssText = fontStyles[nameIndex];
       nameIndex = (nameIndex + 1) % names.length;
     }, 1500);
   }
