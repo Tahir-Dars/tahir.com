@@ -61,7 +61,7 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #
 .muted{color:var(--muted);font-size:0.9rem}
 .card-link{display:inline-block;margin-top:0.6rem;color:var(--accent);text-decoration:none}
 .site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
-.skills-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px}
+.skills-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1200px}
 .skill-item{display:flex;flex-direction:column;gap:0.4rem}
 .skill-header{display:flex;justify-content:space-between;align-items:center;gap:0.5rem}
 .skill-name{margin:0;font-size:0.85rem;color:var(--text);font-weight:600}
