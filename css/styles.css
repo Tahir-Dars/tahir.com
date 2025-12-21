@@ -42,6 +42,7 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #
 @media print{.about-content,.about-heading{display:none}}
 .tech-badge{display:inline-flex;align-items:center;gap:0.4rem}
 .tech-logo{width:14px;height:14px;vertical-align:middle}
+.skill-logo{width:16px;height:16px;vertical-align:middle;margin-right:0.3rem}
 .edu-logo{width:35px;height:35px;object-fit:contain;border-radius:8px}
 .section-divider{height:1px;background:rgba(255,255,255,0.08);margin-bottom:2rem}
 .hero h1{font-size:clamp(1.6rem,4vw,2.8rem);margin:0;margin-bottom:2rem}
@@ -60,6 +61,13 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #
 .muted{color:var(--muted);font-size:0.9rem}
 .card-link{display:inline-block;margin-top:0.6rem;color:var(--accent);text-decoration:none}
 .site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+.skills-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px}
+.skill-item{display:flex;flex-direction:column;gap:0.4rem}
+.skill-header{display:flex;justify-content:space-between;align-items:center;gap:0.5rem}
+.skill-name{margin:0;font-size:0.85rem;color:var(--text);font-weight:600}
+.skill-percent{font-size:0.75rem;color:var(--accent);font-weight:600}
+.skill-bar{width:100%;height:6px;background:transparent;border:0.5px solid rgba(125,211,252,0.3);border-radius:2px;overflow:hidden}
+.skill-fill{height:100%;background:#22c55e;transition:width 0.3s ease}
 
 /* Responsive */
 @media (max-width:900px){
