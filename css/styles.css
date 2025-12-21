@@ -8,7 +8,7 @@
   --radius:10px;
   font-family: "JetBrains Mono", monospace;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
 html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #071025 100%);color:var(--text);}
 .container{max-width:var(--container);margin:0 auto;padding:2rem;}
 .site-header{transition:all 0.3s ease;border:2px solid white;border-radius:10px}
@@ -37,6 +37,9 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #
 .about-heading{font-size:2rem;margin:0 0 2rem 0;color:var(--text)}
 .about-content{color:var(--text);line-height:1.8;font-size:0.95rem}
 .about-content p{margin:0 0 1.2rem 0;color:var(--muted)}
+.about-content{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
+.about-heading{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
+@media print{.about-content,.about-heading{display:none}}
 .tech-badge{display:inline-flex;align-items:center;gap:0.4rem}
 .tech-logo{width:14px;height:14px;vertical-align:middle}
 .edu-logo{width:35px;height:35px;object-fit:contain;border-radius:8px}
