@@ -9,7 +9,7 @@
   font-family: "JetBrains Mono", monospace;
 }
 *{box-sizing:border-box;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
-html,body{height:100%;margin:0;padding-top:3.5rem;background:linear-gradient(180deg,var(--bg) 0%, #071025 100%);color:var(--text);}
+html,body{height:100%;margin:0;padding-top:3.5rem;background:#0f1724;color:var(--text);}
 .container{max-width:var(--container);margin:0 auto;padding:2rem;}
 .site-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;transition:all 0.3s ease;border:2px solid white;border-radius:10px;background:rgba(15,23,36,0.8);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
 .site-header.scrolled{background:rgba(15,23,36,0.95);box-shadow:0 2px 20px rgba(0,0,0,0.5)}
