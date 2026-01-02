@@ -207,6 +207,48 @@ document.addEventListener('DOMContentLoaded',function(){
   };
 
   createIndicator();
+
+  // ============ PROFILE CARD ENHANCEMENTS ============
+  const profileCard = document.querySelector('.profile-card');
+  const profileImage = document.querySelector('.profile-image');
+  const profileImageContainer = document.querySelector('.profile-image-container');
+  
+  if(profileCard) {
+    
+    // Hover state with pulse effect
+    profileCard.addEventListener('mouseenter', () => {
+      profileCard.classList.add('active');
+      profileImage.style.filter = 'brightness(1.15) saturate(1.3)';
+    });
+    
+    profileCard.addEventListener('mouseleave', () => {
+      profileCard.classList.remove('active');
+      profileImage.style.filter = 'brightness(1) saturate(1)';
+    });
+    
+    // Scroll reveal animation - triggers when card enters viewport
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          profileCard.style.animation = 'slideInUp 0.8s ease';
+          profileImageContainer.style.animation = 'slideInLeft 0.8s ease';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    observer.observe(profileCard);
+    
+    // Continuous subtle glow pulse
+    setInterval(() => {
+      profileCard.style.boxShadow = `0 0 ${Math.sin(Date.now() / 500) * 10 + 50}px rgba(0,217,255,0.3), 0 12px 48px rgba(0,0,0,0.4)`;
+    }, 50);
+  }
 });
 
 // Add CSS animation for nav items
