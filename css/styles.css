@@ -37,10 +37,9 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
 .hero-left{width:50%;position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:flex-start;padding:2rem;background:linear-gradient(135deg,rgba(26,0,51,0.98),rgba(13,2,33,0.98));border-right:1px solid rgba(255,0,110,0.1)}
 .hero-sticky{width:100%;animation:slideInLeft 0.8s cubic-bezier(0.34,1.56,0.64,1)}
 .hero-right{width:50%;overflow-y:auto;padding:4rem 2rem;display:flex;flex-direction:column}
-.about-heading{font-size:1.8rem;margin:0 0 1.5rem 0;color:var(--accent);font-weight:700;letter-spacing:0.5px}
-.about-content{color:var(--text);line-height:1.8;font-size:0.95rem}
-.about-content p{margin:0 0 1rem 0;color:var(--muted);transition:color 0.3s ease}
-.about-content p:hover{color:var(--text)}
+.about-heading{font-size:1.8rem;margin:50px 0 1.5rem 0;color:var(--accent);font-weight:700;letter-spacing:0.5px}
+.about-content{color:var(--text);line-height:1.8;font-size:1.2rem}
+.about-content p{margin:0 0 1rem 0;color:var(--muted)}
 .about-content{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
 .about-heading{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
 @media print{.about-content,.about-heading{display:none}}
@@ -151,11 +150,30 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
   .education-grid{grid-template-columns:1fr}
   .skills-container{grid-template-columns:1fr}
 }
-@media (max-width:900px){
+
+/* Surface Pro & Tablets (768px - 1024px) - Keep horizontal layout */
+@media (max-width:1024px) and (min-width:768px){
+  .hero-wrapper{display:flex;flex-direction:row;height:100vh;align-items:stretch}
+  .hero-left{width:45%;height:100vh;position:sticky;top:0;padding:1.5rem;display:flex;align-items:center;justify-content:center}
+  .hero-right{width:55%;overflow-y:auto;padding:2rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+  .profile-image-container{width:220px;height:220px;margin:0 auto 1rem auto}
+  .profile-card{padding:1.5rem 1rem}
+  .hero h1{font-size:1.6rem}
+  .job-title{font-size:0.95rem}
+  .about-heading{font-size:1.5rem;margin:0 0 1rem 0}
+  .about-content{font-size:1rem}
+  .about-content p{margin-bottom:0.8rem}
+  .hero-sticky{width:100%}
+  .nav a{padding:0.4rem 0.8rem;font-size:0.85rem}
+  .resume-btn{padding:0.5rem 1rem;font-size:0.85rem}
+}
+
+/* Large Phones (below 768px) */
+@media (max-width:767px){
   .hero-wrapper{flex-direction:column;height:auto}
   .hero-left{width:100%;height:auto;position:relative;padding:2rem;border-right:none;border-bottom:1px solid rgba(0,217,255,0.1)}
   .hero-right{width:100%;overflow:visible;padding:2rem}
-  .nav ul{display:none;flex-direction:column}
+  .nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,14,39,0.98);backdrop-filter:blur(20px);padding:1rem;border-bottom:1px solid rgba(0,217,255,0.2);gap:0.5rem}
   .nav-toggle{display:inline-block}
   .nav.open ul{display:flex}
   .container{padding:1.5rem}
@@ -163,6 +181,196 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
   .projects-grid{grid-template-columns:1fr}
   .tools-grid{gap:1.5rem}
   html,body{padding-top:3.5rem}
+  .profile-image-container{width:280px;height:280px;margin:0 auto 1.5rem auto}
+  .certifications-grid{grid-template-columns:1fr}
+}
+
+/* Medium Phones (480px - 600px) */
+@media (max-width:600px){
+  html,body{padding-top:3rem}
+  .container{padding:1rem}
+  .site-header .container{padding:0.8rem 1rem}
+  .header-inner{gap:1rem}
+  .logo{font-size:1rem;letter-spacing:1px}
+  .nav-toggle{padding:0.4rem 0.6rem;font-size:0.85rem}
+  
+  .hero-left{padding:1.5rem 1rem}
+  .hero-right{padding:1.5rem 1rem}
+  .profile-card{padding:2rem 1.5rem}
+  .profile-image-container{width:220px;height:220px;margin:0 auto 1rem auto}
+  .hero h1{font-size:clamp(1.5rem,6vw,2rem)}
+  .job-title{font-size:1rem;margin-bottom:1rem}
+  .about-heading{font-size:1.5rem;margin:30px 0 1rem 0}
+  .about-content{font-size:1rem}
+  
+  .section{padding:2.5rem 0}
+  .section h2{font-size:1.5rem}
+  .section h2::after{width:40px;height:2px}
+  
+  .education-card{padding:1.5rem}
+  .education-card strong{font-size:1rem}
+  .edu-logo{width:35px;height:35px}
+  
+  .skill-item{gap:0.4rem}
+  .skill-name{font-size:0.85rem}
+  .skill-percent{font-size:0.7rem;padding:0.15rem 0.5rem}
+  .skill-bar{height:6px}
+  
+  .cert-card{padding:1.5rem}
+  .cert-card h3{font-size:1rem}
+  .cert-badge{font-size:1.5rem}
+  .cert-description{font-size:0.85rem}
+  .cert-skill{font-size:0.7rem;padding:0.2rem 0.5rem}
+  
+  .tools-grid{gap:1.2rem;padding:1.5rem 0.5rem}
+  .tool-circle{width:65px;height:65px}
+  .tool-circle img{width:2rem;height:2rem}
+  .tool-name{font-size:0.8rem}
+  
+  .contact-links{gap:1.2rem;margin-top:2rem}
+  .contact-link{width:55px;height:55px}
+  .contact-link img{width:2.2rem;height:2.2rem}
+  
+  .card{padding:1.5rem}
+  .card h3{font-size:1.1rem}
+  .card p{font-size:0.9rem}
+  
+  .concept-badge{padding:0.5rem 1rem;font-size:0.8rem}
+  .concepts-grid{gap:0.8rem}
+  
+  .btn{padding:0.7rem 1.2rem;font-size:0.9rem}
+  .resume-btn{padding:0.5rem 1rem;font-size:0.85rem}
+  
+  .site-footer{padding:2rem 0}
+}
+
+/* Small Phones (320px - 480px) */
+@media (max-width:480px){
+  html,body{padding-top:2.5rem}
+  .container{padding:0.8rem}
+  .site-header .container{padding:0.6rem 0.8rem}
+  .logo{font-size:0.9rem}
+  .nav-toggle{padding:0.35rem 0.5rem;font-size:0.8rem}
+  .nav ul{padding:0.8rem}
+  .nav a{padding:0.6rem 0.8rem;font-size:0.85rem}
+  
+  .hero-left{padding:1rem 0.8rem}
+  .hero-right{padding:1rem 0.8rem}
+  .profile-card{padding:1.5rem 1rem;border-radius:10px}
+  .profile-image-container{width:180px;height:180px;border-width:2px}
+  .hero h1{font-size:1.4rem;letter-spacing:0}
+  .job-title{font-size:0.9rem}
+  .about-heading{font-size:1.3rem;margin:20px 0 0.8rem 0}
+  .about-content{font-size:0.9rem;line-height:1.7}
+  .about-content p{margin:0 0 0.8rem 0}
+  
+  .section{padding:2rem 0;scroll-margin-top:3rem}
+  .section h2{font-size:1.3rem;margin-bottom:1.5rem}
+  
+  .education-grid{gap:1rem}
+  .education-card{padding:1.2rem}
+  .education-card div[style*="display:flex"]{flex-direction:column;gap:0.8rem;align-items:center;text-align:center}
+  .edu-logo{width:50px;height:50px}
+  .education-card p{font-size:0.85rem}
+  
+  .skills-container{gap:1.5rem}
+  .skill-item{gap:0.3rem}
+  .skill-name{font-size:0.8rem}
+  .skill-logo{width:14px;height:14px}
+  .skill-percent{font-size:0.65rem;padding:0.1rem 0.4rem}
+  .skill-bar{height:5px}
+  
+  .certifications-grid{gap:1rem}
+  .cert-card{padding:1.2rem}
+  .cert-header{margin-bottom:0.8rem}
+  .cert-card h3{font-size:0.95rem}
+  .cert-issuer{font-size:0.75rem}
+  .cert-description{font-size:0.8rem;margin-bottom:1rem}
+  .cert-badge{font-size:1.3rem}
+  .cert-date{font-size:0.65rem;padding:0.2rem 0.6rem}
+  .cert-skills{gap:0.4rem}
+  .cert-skill{font-size:0.65rem;padding:0.15rem 0.4rem}
+  .card-link{font-size:0.85rem}
+  
+  .tools-grid{gap:1rem;padding:1rem 0.3rem;justify-content:space-around}
+  .tool-circle{width:55px;height:55px}
+  .tool-circle img{width:1.6rem;height:1.6rem}
+  .tool-name{font-size:0.7rem}
+  
+  .projects-grid{gap:1rem}
+  .card{padding:1.2rem;border-radius:10px}
+  .card h3{font-size:1rem;margin-bottom:0.8rem}
+  .card p{font-size:0.85rem;line-height:1.6}
+  .card ul{padding-left:1rem;font-size:0.85rem}
+  .card li{margin:0.3rem 0}
+  
+  .concept-badge{padding:0.4rem 0.8rem;font-size:0.75rem;border-radius:15px}
+  .concepts-grid{gap:0.6rem;margin-top:1.5rem}
+  
+  .contact-links{gap:1rem;margin-top:1.5rem}
+  .contact-link{width:50px;height:50px;border-width:1.5px}
+  .contact-link img{width:1.8rem;height:1.8rem}
+  
+  .btn{padding:0.6rem 1rem;font-size:0.85rem;border-radius:6px}
+  .resume-btn{padding:0.4rem 0.8rem;font-size:0.8rem}
+  
+  .section-divider{margin:1.5rem 0}
+  .site-footer{padding:1.5rem 0;font-size:0.85rem}
+}
+
+/* Extra Small Phones (below 320px) */
+@media (max-width:320px){
+  html,body{padding-top:2rem}
+  .container{padding:0.6rem}
+  .site-header .container{padding:0.5rem 0.6rem}
+  .logo{font-size:0.8rem}
+  .nav-toggle{padding:0.3rem 0.4rem;font-size:0.75rem}
+  
+  .profile-card{padding:1.2rem 0.8rem}
+  .profile-image-container{width:150px;height:150px}
+  .hero h1{font-size:1.2rem}
+  .job-title{font-size:0.8rem}
+  .about-heading{font-size:1.1rem}
+  .about-content{font-size:0.85rem}
+  
+  .section h2{font-size:1.1rem}
+  
+  .education-card{padding:1rem}
+  .edu-logo{width:40px;height:40px}
+  .education-card p{font-size:0.8rem}
+  
+  .skill-name{font-size:0.75rem}
+  .skill-logo{width:12px;height:12px}
+  
+  .cert-card{padding:1rem}
+  .cert-card h3{font-size:0.85rem}
+  .cert-description{font-size:0.75rem}
+  
+  .tools-grid{gap:0.8rem}
+  .tool-circle{width:45px;height:45px}
+  .tool-circle img{width:1.4rem;height:1.4rem}
+  .tool-name{font-size:0.65rem}
+  
+  .card{padding:1rem}
+  .card h3{font-size:0.9rem}
+  .card p{font-size:0.8rem}
+  
+  .contact-link{width:45px;height:45px}
+  .contact-link img{width:1.5rem;height:1.5rem}
+  
+  .concept-badge{padding:0.3rem 0.6rem;font-size:0.7rem}
+}
+
+/* Landscape Mode for Phones */
+@media (max-height:500px) and (orientation:landscape){
+  .hero-wrapper{flex-direction:row;height:auto;min-height:100vh}
+  .hero-left{width:40%;height:auto;min-height:100vh;padding:1rem}
+  .hero-right{width:60%;padding:1rem}
+  .profile-image-container{width:120px;height:120px;margin:0 auto 0.8rem auto}
+  .hero h1{font-size:1.2rem}
+  .job-title{font-size:0.85rem}
+  .profile-card{padding:1rem}
+  .about-heading{margin-top:20px}
 }
 
 /* Animations */
