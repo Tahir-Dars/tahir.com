@@ -249,6 +249,27 @@ document.addEventListener('DOMContentLoaded',function(){
       profileCard.style.boxShadow = `0 0 ${Math.sin(Date.now() / 500) * 10 + 50}px rgba(0,217,255,0.3), 0 12px 48px rgba(0,0,0,0.4)`;
     }, 50);
   }
+
+  // Copy About section functionality
+  const copyAboutBtn = document.getElementById('copyAbout');
+  if(copyAboutBtn) {
+    copyAboutBtn.addEventListener('click', function() {
+      const aboutContent = document.querySelector('.about-content');
+      const textToCopy = aboutContent.innerText;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        copyAboutBtn.textContent = '✓ Copied!';
+        copyAboutBtn.classList.add('copied');
+        
+        setTimeout(() => {
+          copyAboutBtn.textContent = '📋';
+          copyAboutBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    });
+  }
 });
 
 // Add CSS animation for nav items
