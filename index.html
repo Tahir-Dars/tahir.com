@@ -83,49 +83,104 @@
     <section id="certifications" class="section">
       <div class="container">
         <h2>Certifications & Achievements</h2>
-        <div class="certifications-grid">
-          <div class="cert-card">
-            <div class="cert-header">
-              <span class="cert-badge">☕</span>
-              <span class="cert-date">2026</span>
+        <div class="achievements-terminal">
+          <div class="achieve-header">
+            <div class="achieve-tabs">
+              <span class="achieve-tab active">📜 certificates.sh</span>
             </div>
-            <h3>Introduction to Java</h3>
-            <p class="cert-issuer">DataCamp</p>
-            <p class="cert-description">Comprehensive introduction to Java programming fundamentals and core concepts.</p>
-            <div class="cert-skills">
-              <span class="cert-skill">Java</span>
-              <span class="cert-skill">Programming</span>
+            <div class="achieve-status">
+              <span class="status-text">verified</span>
+              <span class="status-dot"></span>
             </div>
-            <a href="#" class="card-link" onclick="openCertModal('intro to java by datacamp.pdf', 'Introduction to Java'); return false;">Click to verify</a>
           </div>
-
-          <div class="cert-card">
-            <div class="cert-header">
-              <span class="cert-badge">🔗</span>
-              <span class="cert-date">2026</span>
+          <div class="achieve-body">
+            <div class="terminal-line prompt">$ ls -la ~/certifications/</div>
+            <div class="terminal-line output">total 3 certificates found</div>
+            <div class="terminal-line blank"></div>
+            
+            <div class="cert-entry" onclick="openCertModal('intro to java by datacamp.pdf', 'Introduction to Java')">
+              <div class="terminal-line prompt">$ cat java_certification.md</div>
+              <div class="cert-content">
+                <div class="cert-row">
+                  <span class="cert-label">title:</span>
+                  <span class="cert-value title">"Introduction to Java"</span>
+                  <span class="cert-tag">☕ Java</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">issuer:</span>
+                  <span class="cert-value issuer">DataCamp</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">date:</span>
+                  <span class="cert-value date">2026</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">skills:</span>
+                  <span class="cert-value skills">["Java", "Programming"]</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">status:</span>
+                  <span class="cert-value status">✓ VERIFIED</span>
+                </div>
+              </div>
             </div>
-            <h3>Introduction to GitHub</h3>
-            <p class="cert-issuer">DataCamp</p>
-            <p class="cert-description">Essential GitHub skills for version control and collaborative development workflows.</p>
-            <div class="cert-skills">
-              <span class="cert-skill">Git</span>
-              <span class="cert-skill">GitHub</span>
+            
+            <div class="cert-entry" onclick="openCertModal('dataCamp%27s%20into%20to%20github.pdf', 'Introduction to GitHub')">
+              <div class="terminal-line prompt">$ cat github_certification.md</div>
+              <div class="cert-content">
+                <div class="cert-row">
+                  <span class="cert-label">title:</span>
+                  <span class="cert-value title">"Introduction to GitHub"</span>
+                  <span class="cert-tag">🔗 Git</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">issuer:</span>
+                  <span class="cert-value issuer">DataCamp</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">date:</span>
+                  <span class="cert-value date">2026</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">skills:</span>
+                  <span class="cert-value skills">["Git", "GitHub", "Version Control"]</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">status:</span>
+                  <span class="cert-value status">✓ VERIFIED</span>
+                </div>
+              </div>
             </div>
-            <a href="#" class="card-link" onclick="openCertModal('dataCamp%27s%20into%20to%20github.pdf', 'Introduction to GitHub'); return false;">Click to verify</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-header">
-              <span class="cert-badge">☁️</span>
-              <span class="cert-date">2026</span>
+            
+            <div class="cert-entry" onclick="openCertModal('Screenshot%202026-02-18%20231437.png', 'Understanding Cloud Computing')">
+              <div class="terminal-line prompt">$ cat cloud_certification.md</div>
+              <div class="cert-content">
+                <div class="cert-row">
+                  <span class="cert-label">title:</span>
+                  <span class="cert-value title">"Understanding Cloud Computing"</span>
+                  <span class="cert-tag">☁️ Cloud</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">issuer:</span>
+                  <span class="cert-value issuer">DataCamp</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">date:</span>
+                  <span class="cert-value date">2026</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">skills:</span>
+                  <span class="cert-value skills">["Cloud Computing", "AWS", "Azure"]</span>
+                </div>
+                <div class="cert-row">
+                  <span class="cert-label">status:</span>
+                  <span class="cert-value status">✓ VERIFIED</span>
+                </div>
+              </div>
             </div>
-            <h3>Understanding Cloud Computing</h3>
-            <p class="cert-issuer">DataCamp</p>
-            <p class="cert-description">Understanding all the basic concepts of Cloud Computing and major service providers.</p>
-            <div class="cert-skills">
-              <span class="cert-skill">Cloud Computing</span>
-            </div>
-            <a href="#" class="card-link" onclick="openCertModal('Screenshot%202026-02-18%20231437.png', 'Understanding Cloud Computing'); return false;">Click to verify</a>
+            
+            <div class="terminal-line blank"></div>
+            <div class="terminal-line prompt">$ <span class="cursor">|</span></div>
           </div>
         </div>
       </div>
@@ -145,76 +200,43 @@
     <section id="skills" class="section">
       <div class="container">
         <h2>Programming <span style="color: var(--accent); font-size: 0.9rem;">&lt;/&gt;</span></h2>
-        <div class="skills-orbit">
-          <div class="skill-card" data-level="intermediate">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        <div class="code-editor">
+          <div class="editor-header">
+            <div class="editor-tabs">
+              <div class="editor-tab active"><span class="tab-icon">📄</span> languages.java</div>
             </div>
-            <span class="skill-label">C++</span>
-            <div class="skill-level"><span>Intermediate</span></div>
+            <div class="editor-actions">
+              <span class="action-dot"></span>
+              <span class="action-dot"></span>
+              <span class="action-dot"></span>
+            </div>
           </div>
-          <div class="skill-card" data-level="expert">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">
+          <div class="editor-body">
+            <div class="editor-sidebar">
+              <div class="line-numbers">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+              </div>
             </div>
-            <span class="skill-label">Java</span>
-            <div class="skill-level"><span>Expert</span></div>
-          </div>
-          <div class="skill-card" data-level="expert">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="SQL">
+            <div class="editor-content">
+              <div class="code-line"><span class="comment">// Backend Languages</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">Java</span> <span class="keyword">from</span> <span class="string">"@backend/expert"</span>; <span class="lang-badge expert"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">Expert</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">JSP</span> <span class="keyword">from</span> <span class="string">"@backend/expert"</span>; <span class="lang-badge expert"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="JSP">Expert</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">CPlusPlus</span> <span class="keyword">from</span> <span class="string">"@backend/intermediate"</span>; <span class="lang-badge intermediate"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">Intermediate</span></div>
+              <div class="code-line"></div>
+              <div class="code-line"><span class="comment">// Database</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">SQL</span> <span class="keyword">from</span> <span class="string">"@database/expert"</span>; <span class="lang-badge expert"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="SQL">Expert</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">PostgreSQL</span> <span class="keyword">from</span> <span class="string">"@database/intermediate"</span>; <span class="lang-badge intermediate"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">Intermediate</span></div>
+              <div class="code-line"></div>
+              <div class="code-line"><span class="comment">// Frontend Technologies</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">HTML5</span> <span class="keyword">from</span> <span class="string">"@frontend/expert"</span>; <span class="lang-badge expert"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">Expert</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">CSS3</span> <span class="keyword">from</span> <span class="string">"@frontend/expert"</span>; <span class="lang-badge expert"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">Expert</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">JavaScript</span> <span class="keyword">from</span> <span class="string">"@frontend/advanced"</span>; <span class="lang-badge advanced"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">Advanced</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">Bootstrap</span> <span class="keyword">from</span> <span class="string">"@frontend/advanced"</span>; <span class="lang-badge advanced"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">Advanced</span></div>
+              <div class="code-line"></div>
+              <div class="code-line"><span class="comment">// Mobile Development</span></div>
+              <div class="code-line"><span class="keyword">import</span> <span class="class-name">Dart</span> <span class="keyword">from</span> <span class="string">"@mobile/intermediate"</span>; <span class="lang-badge intermediate"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" alt="Dart">Intermediate</span></div>
+              <div class="code-line cursor-line"><span class="cursor">|</span></div>
             </div>
-            <span class="skill-label">SQL</span>
-            <div class="skill-level"><span>Expert</span></div>
-          </div>
-          <div class="skill-card" data-level="intermediate">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-            </div>
-            <span class="skill-label">PostgreSQL</span>
-            <div class="skill-level"><span>Intermediate</span></div>
-          </div>
-          <div class="skill-card" data-level="expert">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
-            </div>
-            <span class="skill-label">HTML</span>
-            <div class="skill-level"><span>Expert</span></div>
-          </div>
-          <div class="skill-card" data-level="advanced">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">
-            </div>
-            <span class="skill-label">CSS</span>
-            <div class="skill-level"><span>Advanced</span></div>
-          </div>
-          <div class="skill-card" data-level="advanced">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
-            </div>
-            <span class="skill-label">JavaScript</span>
-            <div class="skill-level"><span>Advanced</span></div>
-          </div>
-          <div class="skill-card" data-level="advanced">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-            </div>
-            <span class="skill-label">Bootstrap</span>
-            <div class="skill-level"><span>Advanced</span></div>
-          </div>
-          <div class="skill-card" data-level="expert">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="JSP">
-            </div>
-            <span class="skill-label">JSP</span>
-            <div class="skill-level"><span>Expert</span></div>
-          </div>
-          <div class="skill-card" data-level="intermediate">
-            <div class="skill-icon">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" alt="Dart">
-            </div>
-            <span class="skill-label">Dart</span>
-            <div class="skill-level"><span>Intermediate</span></div>
           </div>
         </div>
         <div class="section-divider"></div>
