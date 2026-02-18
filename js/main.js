@@ -316,3 +316,24 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme') || 'dark';
+
+// Apply saved theme on load
+if (savedTheme === 'light') {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', function() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme === 'light' ? 'light' : '');
+  localStorage.setItem('theme', newTheme);
+  
+  // Add animation class
+  this.classList.add('switching');
+  setTimeout(() => this.classList.remove('switching'), 400);
+});
+
