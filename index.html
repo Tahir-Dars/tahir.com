@@ -96,7 +96,7 @@
               <span class="cert-skill">Java</span>
               <span class="cert-skill">Programming</span>
             </div>
-            <a href="intro to java by datacamp.pdf" target="_blank" class="card-link">Click to verify</a>
+            <a href="#" class="card-link" onclick="openCertModal('intro to java by datacamp.pdf', 'Introduction to Java'); return false;">Click to verify</a>
           </div>
 
           <div class="cert-card">
@@ -111,7 +111,7 @@
               <span class="cert-skill">Git</span>
               <span class="cert-skill">GitHub</span>
             </div>
-            <a href="dataCamp's into to github.pdf" target="_blank" class="card-link">Click to verify</a>
+            <a href="#" class="card-link" onclick="openCertModal('dataCamp%27s%20into%20to%20github.pdf', 'Introduction to GitHub'); return false;">Click to verify</a>
           </div>
 
           <div class="cert-card">
@@ -125,11 +125,22 @@
             <div class="cert-skills">
               <span class="cert-skill">Cloud Computing</span>
             </div>
-            <a href="Screenshot 2026-02-18 231437.png" target="_blank" class="card-link">Click to verify</a>
+            <a href="#" class="card-link" onclick="openCertModal('Screenshot%202026-02-18%20231437.png', 'Understanding Cloud Computing'); return false;">Click to verify</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal">
+      <div class="cert-modal-content">
+        <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+        <div class="cert-modal-body">
+          <iframe id="certModalFrame" src="" frameborder="0"></iframe>
+          <img id="certModalImage" src="" alt="Certificate">
+        </div>
+      </div>
+    </div>
 
     <section id="skills" class="section">
       <div class="container">

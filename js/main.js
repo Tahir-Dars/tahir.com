@@ -268,3 +268,51 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Certificate Modal Functions
+function openCertModal(src, title) {
+  const modal = document.getElementById('certModal');
+  const modalFrame = document.getElementById('certModalFrame');
+  const modalImage = document.getElementById('certModalImage');
+  
+  // Check if it's a PDF or image
+  const decodedSrc = decodeURIComponent(src);
+  if (decodedSrc.toLowerCase().endsWith('.pdf')) {
+    modalFrame.src = decodedSrc;
+    modalFrame.style.display = 'block';
+    modalImage.style.display = 'none';
+  } else {
+    modalImage.src = decodedSrc;
+    modalImage.style.display = 'block';
+    modalFrame.style.display = 'none';
+  }
+  
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  const modalFrame = document.getElementById('certModalFrame');
+  const modalImage = document.getElementById('certModalImage');
+  
+  modal.classList.remove('active');
+  modalFrame.src = '';
+  modalImage.src = '';
+  document.body.style.overflow = '';
+}
+
+// Close modal on outside click
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('certModal');
+  if (e.target === modal) {
+    closeCertModal();
+  }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeCertModal();
+  }
+});
+
