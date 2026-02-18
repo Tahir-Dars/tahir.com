@@ -251,42 +251,33 @@
     <section id="tools" class="section">
       <div class="container">
         <h2 style="text-align: center;">Development Tools</h2>
-        <div class="tools-grid">
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code"></span>
-            <div class="tool-name">VS Code</div>
+        <div class="package-json">
+          <div class="json-header">
+            <span class="json-icon">📦</span>
+            <span class="json-filename">package.json</span>
           </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" alt="IntelliJ"></span>
-            <div class="tool-name">IntelliJ IDEA</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://blog.idrsolutions.com/app/uploads/2019/08/1200px-Apache_NetBeans_Logo.svg_-1.png" alt="Netbeans"></span>
-            <div class="tool-name">NetBeans</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/eclipse/eclipse-original.svg" alt="Eclipse"></span>
-            <div class="tool-name">Eclipse</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub"></span>
-            <div class="tool-name">GitHub</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg" alt="Postman"></span>
-            <div class="tool-name">Postman</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git"></span>
-            <div class="tool-name">Git</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/maven/maven-original.svg" alt="Maven"></span>
-            <div class="tool-name">Maven</div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-circle"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tomcat/tomcat-original.svg" alt="Tomcat"></span>
-            <div class="tool-name">Tomcat</div>
+          <div class="json-body">
+            <div class="json-line"><span class="json-brace">{</span></div>
+            <div class="json-line"><span class="json-key">"name"</span><span class="json-colon">:</span> <span class="json-string">"tahir-dev-toolkit"</span><span class="json-comma">,</span></div>
+            <div class="json-line"><span class="json-key">"version"</span><span class="json-colon">:</span> <span class="json-string">"2.0.26"</span><span class="json-comma">,</span></div>
+            <div class="json-line"><span class="json-key">"devDependencies"</span><span class="json-colon">:</span> <span class="json-brace">{</span></div>
+            <div class="json-line indent">
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" alt="IntelliJ"><span>IntelliJ</span></div>
+              <div class="tool-badge"><img src="https://blog.idrsolutions.com/app/uploads/2019/08/1200px-Apache_NetBeans_Logo.svg_-1.png" alt="NetBeans"><span>NetBeans</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
+            </div>
+            <div class="json-line"><span class="json-brace">}</span><span class="json-comma">,</span></div>
+            <div class="json-line"><span class="json-key">"tools"</span><span class="json-colon">:</span> <span class="json-brace">{</span></div>
+            <div class="json-line indent">
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/maven/maven-original.svg" alt="Maven"><span>Maven</span></div>
+              <div class="tool-badge"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tomcat/tomcat-original.svg" alt="Tomcat"><span>Tomcat</span></div>
+            </div>
+            <div class="json-line"><span class="json-brace">}</span></div>
+            <div class="json-line"><span class="json-brace">}</span></div>
           </div>
         </div>
         <div class="section-divider"></div>
@@ -296,38 +287,73 @@
     <section id="projects" class="section">
       <div class="container">
         <h2>Projects</h2>
-        <div class="projects-grid">
-          <article class="card">
-            <h3>Banking System — JDBC</h3>
-            <p>Java-based banking system using JDBC for secure transaction management.</p>
-            <ul class="muted">
-              <li>Features: deposits, withdrawals, balance inquiries, secure transactions</li>
-              <li>Database integration with JDBC; expandable component architecture</li>
-            </ul>
-            <p class="muted">Tech: Java • JDBC • Database Design</p>
-          </article>
-          <article class="card">
-            <h3>Todo List Application — Servlet</h3>
-            <p>Full-stack web application for online task management using Java Servlets.</p>
-            <ul class="muted">
-              <li>Features: create, read, update, delete tasks; persistent storage</li>
-              <li>JSP frontend with Servlet backend; responsive user interface</li>
-            </ul>
-            <p class="muted">Tech: Java • Servlets • JSP • Bootstrap</p>
-          </article>
-          <article class="card">
-            <h3>Vehicle Rental System — MUET</h3>
-            <p>Academic semester project using C++ with file handling and OOP.</p>
-            <ul class="muted">
-              <li>Features: vehicle inventory, customer registration, rental transactions</li>
-              <li>Persistent data via file handling; input validation and error handling</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Personal Projects</h3>
-            <p>Ongoing practice projects in Java and SQL to strengthen OOP and database skills.</p>
-            <p class="muted">Tech: Java • SQL • C++</p>
-          </article>
+        <div class="git-log">
+          <div class="git-header">
+            <div class="git-branch"><span class="branch-icon"></span> main</div>
+            <span class="git-title">git log --oneline</span>
+          </div>
+          <div class="git-body">
+            <div class="commit">
+              <div class="commit-line">
+                <span class="commit-hash">a1b2c3d</span>
+                <span class="commit-msg">feat: Banking System — JDBC</span>
+                <span class="commit-tag">Java</span>
+              </div>
+              <div class="commit-details">
+                <p>Java-based banking system using JDBC for secure transaction management.</p>
+                <div class="commit-stats">
+                  <span class="stat"><span class="stat-icon">✨</span> deposits, withdrawals, balance inquiries</span>
+                  <span class="stat"><span class="stat-icon">🔒</span> secure transactions</span>
+                  <span class="stat"><span class="stat-icon">🗄️</span> JDBC • Database Design</span>
+                </div>
+              </div>
+            </div>
+            <div class="commit">
+              <div class="commit-line">
+                <span class="commit-hash">e4f5g6h</span>
+                <span class="commit-msg">feat: Todo List Application — Servlet</span>
+                <span class="commit-tag">Full-Stack</span>
+              </div>
+              <div class="commit-details">
+                <p>Full-stack web application for online task management using Java Servlets.</p>
+                <div class="commit-stats">
+                  <span class="stat"><span class="stat-icon">📝</span> CRUD operations</span>
+                  <span class="stat"><span class="stat-icon">💾</span> persistent storage</span>
+                  <span class="stat"><span class="stat-icon">⚡</span> Servlets • JSP • Bootstrap</span>
+                </div>
+              </div>
+            </div>
+            <div class="commit">
+              <div class="commit-line">
+                <span class="commit-hash">i7j8k9l</span>
+                <span class="commit-msg">feat: Vehicle Rental System — MUET</span>
+                <span class="commit-tag">C++</span>
+              </div>
+              <div class="commit-details">
+                <p>Academic semester project using C++ with file handling and OOP.</p>
+                <div class="commit-stats">
+                  <span class="stat"><span class="stat-icon">🚗</span> vehicle inventory & rentals</span>
+                  <span class="stat"><span class="stat-icon">📁</span> file handling</span>
+                  <span class="stat"><span class="stat-icon">🎯</span> OOP principles</span>
+                </div>
+              </div>
+            </div>
+            <div class="commit">
+              <div class="commit-line">
+                <span class="commit-hash">m0n1o2p</span>
+                <span class="commit-msg">wip: Personal Projects & Practice</span>
+                <span class="commit-tag">Ongoing</span>
+              </div>
+              <div class="commit-details">
+                <p>Ongoing practice projects to strengthen OOP and database skills.</p>
+                <div class="commit-stats">
+                  <span class="stat"><span class="stat-icon">☕</span> Java</span>
+                  <span class="stat"><span class="stat-icon">🗃️</span> SQL</span>
+                  <span class="stat"><span class="stat-icon">💻</span> C++</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -335,16 +361,41 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 style="text-align: center;">Get in touch with me</h2>
-        <div class="contact-links">
-          <a href="mailto:mtahirdars32@gmail.com" class="contact-link" title="Send me an email">
-            <img src="download.webp" alt="Gmail" style="border-radius: 1.5px;">
-          </a>
-          <a href="https://www.linkedin.com/in/muhammad-tahir" target="_blank" class="contact-link" title="Visit my LinkedIn">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-          </a>
-          <a href="https://www.instagram.com/tahirdars._?igsh=cDRhNW1jMjR5M2h1" target="_blank" class="contact-link" title="Follow on Instagram">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-          </a>
+        <div class="api-endpoint">
+          <div class="api-header">
+            <span class="api-method">POST</span>
+            <span class="api-url">/api/v1/contact/muhammad-tahir</span>
+            <span class="api-status">200 OK</span>
+          </div>
+          <div class="api-body">
+            <div class="api-line"><span class="api-brace">{</span></div>
+            <div class="api-line"><span class="api-key">"message"</span><span class="api-colon">:</span> <span class="api-string">"Let's connect and build something amazing!"</span><span class="api-comma">,</span></div>
+            <div class="api-line"><span class="api-key">"channels"</span><span class="api-colon">:</span> <span class="api-brace">[</span></div>
+            <div class="api-line api-links">
+              <a href="mailto:mtahirdars32@gmail.com" class="api-link" title="Send me an email">
+                <img src="download.webp" alt="Gmail">
+                <span class="link-label">Email</span>
+                <span class="link-value">mtahirdars32@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-tahir-642187285" target="_blank" class="api-link" title="Visit my LinkedIn">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                <span class="link-label">LinkedIn</span>
+                <span class="link-value">/muhammad-tahir</span>
+              </a>
+              <a href="https://www.instagram.com/tahirdars._?igsh=cDRhNW1jMjR5M2h1" target="_blank" class="api-link" title="Follow on Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+                <span class="link-label">Instagram</span>
+                <span class="link-value">@tahirdars._</span>
+              </a>
+              <a href="https://github.com/Tahir-Dars" target="_blank" class="api-link" title="Check my GitHub">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub">
+                <span class="link-label">GitHub</span>
+                <span class="link-value">Tahir-Dars</span>
+              </a>
+            </div>
+            <div class="api-line"><span class="api-brace">]</span></div>
+            <div class="api-line"><span class="api-brace">}</span></div>
+          </div>
         </div>
       </div>
     </section>
