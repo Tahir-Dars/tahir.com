@@ -250,26 +250,7 @@ document.addEventListener('DOMContentLoaded',function(){
     }, 50);
   }
 
-  // Copy About section functionality
-  const copyAboutBtn = document.getElementById('copyAbout');
-  if(copyAboutBtn) {
-    copyAboutBtn.addEventListener('click', function() {
-      const aboutContent = document.querySelector('.about-content');
-      const textToCopy = aboutContent.innerText;
-      
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        copyAboutBtn.textContent = '✓ Copied!';
-        copyAboutBtn.classList.add('copied');
-        
-        setTimeout(() => {
-          copyAboutBtn.textContent = '📋';
-          copyAboutBtn.classList.remove('copied');
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy:', err);
-      });
-    });
-  }
+
 });
 
 // Add CSS animation for nav items
