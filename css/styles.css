@@ -59,7 +59,7 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
 .tech-logo{width:16px;height:16px;vertical-align:middle}
 .skill-logo{width:16px;height:16px;vertical-align:middle;margin-right:0.3rem}
 .edu-logo{width:40px;height:40px;object-fit:contain;border-radius:8px;border:1px solid rgba(0,217,255,0.2)}
-.section-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(0,217,255,0.3),transparent);margin:2rem 0;margin-bottom:2rem}
+.section-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(0,217,255,0.3),transparent);margin:0.5rem 0}
 .hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:0;margin-bottom:1rem;color:var(--text);font-weight:800;letter-spacing:-1px;animation:slideInUp 0.8s ease 0.1s both}
 .job-title{font-size:1.1rem;color:var(--accent);margin:0;margin-bottom:1.5rem;font-weight:600;animation:slideInUp 0.8s ease 0.2s both}
 .profile-image-container{width:400px;height:400px;margin:0 auto 1.5rem 80px;border-radius:50%;overflow:hidden;border:3px solid var(--accent);box-shadow:0 0 40px rgba(0,217,255,0.4),inset 0 0 40px rgba(0,217,255,0.1);background:linear-gradient(135deg,rgba(0,217,255,0.15),rgba(125,211,252,0.08));display:flex;align-items:center;justify-content:center;animation:slideInLeft 0.8s ease;position:relative}
