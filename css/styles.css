@@ -29,7 +29,7 @@
 [data-theme="light"] .nav a:hover{color:#0891b2;background:rgba(8,145,178,0.1)}
 [data-theme="light"] .hero-left{background:linear-gradient(135deg,rgba(224,231,239,0.98),rgba(241,245,249,0.98))}
 [data-theme="light"] .profile-card{background:linear-gradient(135deg,rgba(255,255,255,0.9),rgba(241,245,249,0.8));border-color:rgba(8,145,178,0.2)}
-[data-theme="light"] .code-editor,[data-theme="light"] .concepts-terminal,[data-theme="light"] .package-json,[data-theme="light"] .git-log,[data-theme="light"] .api-endpoint,[data-theme="light"] .achievements-terminal{background:#1e293b;border-color:rgba(8,145,178,0.3)}
+[data-theme="light"] .code-editor,[data-theme="light"] .concepts-terminal,[data-theme="light"] .package-json,[data-theme="light"] .git-log,[data-theme="light"] .api-endpoint,[data-theme="light"] .achievements-terminal,[data-theme="light"] .education-notepad{background:#1e293b;border-color:rgba(8,145,178,0.3)}
 [data-theme="light"] .education-card{background:linear-gradient(135deg,rgba(255,255,255,0.8),rgba(241,245,249,0.6));border-color:rgba(8,145,178,0.2)}
 [data-theme="light"] .section-divider{background:linear-gradient(90deg,transparent,rgba(8,145,178,0.3),transparent)}
 [data-theme="light"] .site-footer{border-top-color:rgba(8,145,178,0.2)}
@@ -172,7 +172,39 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
 .skill-card[data-level="expert"] .skill-level{color:#f472b6;border-color:rgba(244,114,182,0.4)}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
-/* Education Section */
+/* Education Section - Coding Notepad Style */
+.education-notepad{margin-top:1.5rem;background:#1e1e1e;border-radius:12px;overflow:hidden;border:1px solid rgba(0,217,255,0.2);box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+.notepad-header{display:flex;align-items:center;justify-content:space-between;padding:0;background:#252526;border-bottom:1px solid #3c3c3c}
+.notepad-tabs{display:flex;align-items:center}
+.notepad-tab{display:flex;align-items:center;gap:0.5rem;padding:0.7rem 1.2rem;background:#1e1e1e;color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.8rem;border-right:1px solid #3c3c3c;position:relative}
+.notepad-tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent)}
+.notepad-tab.active{background:#1e1e1e}
+.notepad-tab-new{padding:0.7rem 1rem;color:#858585;font-size:1rem;cursor:pointer;transition:color 0.3s ease}
+.notepad-tab-new:hover{color:var(--accent)}
+.notepad-actions{display:flex;gap:8px;padding-right:1rem}
+.notepad-actions .action-dot{width:12px;height:12px;border-radius:50%}
+.notepad-actions .action-dot:nth-child(1){background:#ff5f56}
+.notepad-actions .action-dot:nth-child(2){background:#ffbd2e}
+.notepad-actions .action-dot:nth-child(3){background:#27c93f}
+.notepad-body{display:flex;min-height:380px}
+.notepad-sidebar{background:#1e1e1e;border-right:1px solid #3c3c3c;padding:1rem 0}
+.notepad-sidebar .line-numbers{display:flex;flex-direction:column;padding:0 1rem;color:#858585;font-family:'JetBrains Mono',monospace;font-size:0.8rem;line-height:1.9;text-align:right;user-select:none}
+.notepad-content{flex:1;padding:1rem 1.5rem;overflow-x:auto}
+.edu-code-block .code-line{font-family:'JetBrains Mono',monospace;font-size:0.85rem;line-height:1.9;display:flex;align-items:center;gap:0.5rem;padding:0 0.5rem;margin:0 -0.5rem;border-radius:4px;transition:background 0.2s ease}
+.edu-code-block .code-line:hover{background:rgba(255,255,255,0.05)}
+.edu-code-block .code-line.indent{padding-left:2rem}
+.edu-code-block .code-line.blank{height:1.9rem}
+.edu-code-block .comment{color:#6a9955;font-style:italic}
+.edu-code-block .keyword{color:#569cd6;font-weight:600}
+.edu-code-block .variable{color:#4ec9b0}
+.edu-code-block .key{color:#9cdcfe}
+.edu-code-block .string{color:#ce9178}
+.edu-inline-logo{width:24px;height:24px;object-fit:contain;border-radius:4px;border:1px solid rgba(0,217,255,0.3);margin-right:0.5rem;vertical-align:middle;background:rgba(255,255,255,0.9);padding:2px}
+.status-badge{display:inline-flex;align-items:center;gap:0.3rem;padding:0.2rem 0.6rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.status-badge.completed{background:rgba(52,211,153,0.15);color:#34d399;border-color:rgba(52,211,153,0.3)}
+.edu-code-block .cursor-line .cursor{color:var(--accent);animation:blink 1s infinite}
+
+/* Legacy Education Grid Support */
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
 .education-card{padding:2rem;background:linear-gradient(135deg,rgba(15,20,60,0.4),rgba(10,15,45,0.3));border:1px solid rgba(0,217,255,0.2);border-radius:var(--radius);transition:all 0.3s ease}
 .education-card:hover{border-color:rgba(0,217,255,0.5);box-shadow:0 8px 32px rgba(0,217,255,0.15)}
@@ -306,6 +338,10 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
 @media (max-width:1024px){
   .education-grid{grid-template-columns:1fr}
   .skills-container{grid-template-columns:1fr}
+  .education-notepad{border-radius:10px}
+  .notepad-body{min-height:320px}
+  .edu-code-block .code-line{font-size:0.8rem}
+  .edu-inline-logo{width:22px;height:22px}
 }
 
 /* Surface Pro & Tablets (768px - 1024px) - Keep horizontal layout */
@@ -346,6 +382,14 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
   html,body{padding-top:3.5rem}
   .profile-image-container{width:280px;height:280px;margin:0 auto 1.5rem auto}
   .certifications-grid{grid-template-columns:1fr}
+  .education-notepad{border-radius:10px}
+  .notepad-body{flex-direction:column;min-height:auto}
+  .notepad-sidebar{display:none}
+  .notepad-content{padding:1rem}
+  .edu-code-block .code-line{font-size:0.75rem;line-height:1.8}
+  .edu-code-block .code-line::before{content:attr(data-line);color:#858585;min-width:1.8rem;font-size:0.65rem}
+  .edu-inline-logo{width:20px;height:20px}
+  .status-badge{font-size:0.65rem;padding:0.15rem 0.5rem}
 }
 
 /* Medium Phones (480px - 600px) */
@@ -373,6 +417,15 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
   .education-card{padding:1.5rem}
   .education-card strong{font-size:1rem}
   .edu-logo{width:35px;height:35px}
+  
+  .education-notepad{border-radius:8px}
+  .notepad-header{flex-wrap:wrap;gap:0.5rem}
+  .notepad-tab{font-size:0.7rem;padding:0.5rem 0.8rem}
+  .notepad-content{padding:0.8rem}
+  .edu-code-block .code-line{font-size:0.7rem;line-height:1.7;flex-wrap:wrap}
+  .edu-code-block .code-line.indent{padding-left:1.5rem}
+  .edu-inline-logo{width:18px;height:18px;margin-right:0.3rem}
+  .status-badge{font-size:0.6rem;padding:0.12rem 0.4rem}
   
   .code-editor{border-radius:10px}
   .editor-body{min-height:280px}
@@ -449,6 +502,16 @@ html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--t
   .education-card div[style*="display:flex"]{flex-direction:column;gap:0.8rem;align-items:center;text-align:center}
   .edu-logo{width:50px;height:50px}
   .education-card p{font-size:0.85rem}
+  
+  .education-notepad{border-radius:6px}
+  .notepad-header{padding:0.5rem 0.8rem}
+  .notepad-tab{font-size:0.6rem;padding:0.4rem 0.6rem}
+  .notepad-actions .action-dot{width:8px;height:8px}
+  .notepad-content{padding:0.6rem}
+  .edu-code-block .code-line{font-size:0.6rem;line-height:1.6;gap:0.3rem}
+  .edu-code-block .code-line.indent{padding-left:1rem}
+  .edu-inline-logo{width:16px;height:16px;margin-right:0.2rem;padding:1px}
+  .status-badge{font-size:0.55rem;padding:0.1rem 0.35rem}
   
   .skills-orbit{gap:0.8rem;padding:1rem 0}
   .skill-card{width:85px;height:105px;border-radius:12px}
