@@ -4,6 +4,19 @@ document.addEventListener('DOMContentLoaded',function(){
   const siteHeader=document.querySelector('.site-header');
   const logo=document.querySelector('.logo');
   const navLinks=document.querySelectorAll('.nav a:not(.resume-btn)');
+
+  // Keep logos visible even if external icon CDNs fail temporarily
+  const logoSelectors = '.lang-badge img, .tool-badge img, .api-link img, .edu-inline-logo';
+  const fallbackLogo = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Cpath d='M16 32h32M32 16v32' stroke='%2300d9ff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E";
+
+  document.querySelectorAll(logoSelectors).forEach((img) => {
+    img.addEventListener('error', function onImageError() {
+      if (this.dataset.fallbackApplied === 'true') return;
+      this.dataset.fallbackApplied = 'true';
+      this.src = fallbackLogo;
+      this.alt = (this.alt || 'Icon') + ' (fallback)';
+    }, { once: true });
+  });
   
   // Mobile menu toggle with smooth animation
   navToggle.addEventListener('click',()=>{
