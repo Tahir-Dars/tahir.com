@@ -45,6 +45,16 @@
 [data-theme="light"] .theme-toggle{background:linear-gradient(135deg,#e0f2fe,#bae6fd);border-color:rgba(8,145,178,0.4)}
 [data-theme="light"] .theme-icon.sun{opacity:1;transform:translateY(0) rotate(0deg)}
 [data-theme="light"] .theme-icon.moon{opacity:0;transform:translateY(-20px) rotate(90deg)}
+
+/* Screen Maximize/Minimize Toggle */
+.screen-toggle{position:fixed;right:1rem;bottom:1rem;z-index:1500;width:50px;height:50px;border-radius:50%;border:1px solid rgba(0,217,255,0.35);background:rgba(10,14,39,0.85);backdrop-filter:blur(10px);color:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.35);transition:all 0.25s ease}
+.screen-toggle:hover{transform:translateY(-2px) scale(1.04);border-color:rgba(0,217,255,0.7);box-shadow:0 0 18px rgba(0,217,255,0.35)}
+.screen-toggle .maximize-icon,.screen-toggle .minimize-icon{position:absolute;font-size:1.1rem;line-height:1;transition:opacity 0.2s ease,transform 0.2s ease}
+.screen-toggle .maximize-icon{opacity:1;transform:scale(1)}
+.screen-toggle .minimize-icon{opacity:0;transform:scale(0.8)}
+.screen-toggle.active .maximize-icon{opacity:0;transform:scale(0.8)}
+.screen-toggle.active .minimize-icon{opacity:1;transform:scale(1)}
+[data-theme="light"] .screen-toggle{background:rgba(240,244,248,0.9);border-color:rgba(8,145,178,0.35);color:#0891b2}
 *{box-sizing:border-box;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;scroll-behavior:smooth}
 html,body{height:100%;margin:0;padding-top:4rem;background:#0a0e27;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .container{max-width:var(--container);margin:0 auto;padding:2rem}

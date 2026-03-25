@@ -350,3 +350,33 @@ themeToggle.addEventListener('click', function() {
   setTimeout(() => this.classList.remove('switching'), 400);
 });
 
+// Screen Maximize/Minimize Toggle
+const screenToggle = document.getElementById('screenToggle');
+
+if (screenToggle) {
+  const updateScreenToggleState = () => {
+    const isFullscreen = !!document.fullscreenElement;
+    screenToggle.classList.toggle('active', isFullscreen);
+    screenToggle.setAttribute('aria-pressed', String(isFullscreen));
+    screenToggle.setAttribute('title', isFullscreen ? 'Minimize screen' : 'Maximize screen');
+    screenToggle.setAttribute('aria-label', isFullscreen ? 'Minimize screen' : 'Maximize screen');
+  };
+
+  screenToggle.addEventListener('click', async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      console.warn('Fullscreen toggle failed:', error);
+    } finally {
+      updateScreenToggleState();
+    }
+  });
+
+  document.addEventListener('fullscreenchange', updateScreenToggleState);
+  updateScreenToggleState();
+}
+
