@@ -110,30 +110,9 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   });
 
-  // Rotating name in navbar with smooth transitions
-  const names = ['tahir_dars', 'Muhammad Tahir', 'Developer'];
-  const fontStyles = [
-    'font-family: "JetBrains Mono", monospace; font-weight: 800; font-size: 1.1em;',
-    'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 800; font-size: 1.05em;',
-    'font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 1em; font-style: italic;'
-  ];
-  let nameIndex = 0;
-  
+  // Fixed navbar heading
   if(logo) {
-    const rotateLogoName = () => {
-      logo.style.opacity = '0';
-      logo.style.transform = 'translateY(-10px)';
-      
-      setTimeout(() => {
-        logo.textContent = names[nameIndex];
-        logo.style.cssText = fontStyles[nameIndex] + '; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);';
-        logo.style.opacity = '1';
-        logo.style.transform = 'translateY(0)';
-        nameIndex = (nameIndex + 1) % names.length;
-      }, 200);
-    };
-    
-    setInterval(rotateLogoName, 3000);
+    logo.textContent = 'Muhammad Tahir Dars';
   }
 
   // Resume button enhanced interaction
