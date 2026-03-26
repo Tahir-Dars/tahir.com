@@ -310,24 +310,39 @@ document.addEventListener('keydown', function(e) {
 
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('themeToggle');
-const savedTheme = localStorage.getItem('theme') || 'dark';
+if (themeToggle) {
+  // Use saved preference first; otherwise follow system preference.
+  const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const savedTheme = localStorage.getItem('theme');
 
-// Apply saved theme on load
-if (savedTheme === 'light') {
-  document.documentElement.setAttribute('data-theme', 'light');
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    const isDark = theme === 'dark';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeToggle.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+
+  const getPreferredTheme = () => {
+    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+    return systemThemeQuery.matches ? 'dark' : 'light';
+  };
+
+  applyTheme(getPreferredTheme());
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  });
+
+  // Keep in sync with OS theme changes when user has no saved choice.
+  systemThemeQuery.addEventListener('change', (event) => {
+    if (localStorage.getItem('theme')) return;
+    applyTheme(event.matches ? 'dark' : 'light');
+  });
 }
-
-themeToggle.addEventListener('click', function() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
-  document.documentElement.setAttribute('data-theme', newTheme === 'light' ? 'light' : '');
-  localStorage.setItem('theme', newTheme);
-  
-  // Add animation class
-  this.classList.add('switching');
-  setTimeout(() => this.classList.remove('switching'), 400);
-});
 
 // Screen Maximize/Minimize Toggle
 const screenToggle = document.getElementById('screenToggle');
