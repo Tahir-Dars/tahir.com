@@ -66,6 +66,10 @@
 [data-theme="light"] .git-header,
 [data-theme="light"] .api-header{background:#e4f4ff;border-color:rgba(0,217,255,0.25)}
 [data-theme="light"] .education-card{background:var(--card);border-color:rgba(0,217,255,0.25)}
+[data-theme="light"] .notepad-sidebar,
+[data-theme="light"] .editor-sidebar{background:#e9f6ff;border-right:1px solid rgba(0,217,255,0.22)}
+[data-theme="light"] .notepad-sidebar .line-numbers,
+[data-theme="light"] .editor-sidebar .line-numbers{color:#5a5a6d}
 [data-theme="light"] .section-divider{background:linear-gradient(90deg,transparent,rgba(0,217,255,0.35),transparent)}
 [data-theme="light"] .site-footer{border-top-color:rgba(0,217,255,0.25)}
 [data-theme="light"] .hero{background:linear-gradient(180deg,rgba(0,217,255,0.05) 0%,transparent 55%)}
