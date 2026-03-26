@@ -83,7 +83,8 @@
 [data-theme="light"] .hero{background:linear-gradient(180deg,rgba(0,217,255,0.05) 0%,transparent 55%)}
 [data-theme="light"] .hero-left{border-right:1px solid rgba(0,217,255,0.15)}
 [data-theme="light"] .site-header{box-shadow:0 8px 28px rgba(17,24,39,0.08)}
-[data-theme="light"] .logo{background:linear-gradient(135deg,#0ea5c8,#ff006e);-webkit-background-clip:text;background-clip:text}
+[data-theme="light"] .logo{background:none;color:#0b7f99;-webkit-text-fill-color:#0b7f99;font-size:1.3rem}
+[data-theme="light"] .site-header.scrolled .logo{color:#0b7f99;-webkit-text-fill-color:#0b7f99}
 
 [data-theme="light"] .card,
 [data-theme="light"] .education-card,
