@@ -364,14 +364,15 @@ html,body{height:100%;margin:0;padding-top:4rem;background:var(--bg);color:var(-
 .notepad-content{flex:1;padding:1rem 1.5rem;overflow-x:auto}
 .edu-code-block .code-line{font-family:'JetBrains Mono',monospace;font-size:0.85rem;line-height:1.9;display:flex;align-items:center;gap:0.5rem;padding:0 0.5rem;margin:0 -0.5rem;border-radius:4px;transition:background 0.2s ease}
 .edu-code-block .code-line:hover{background:rgba(255,255,255,0.05)}
-.edu-code-block .code-line.indent{padding-left:2rem}
+.edu-code-block .code-line.indent{padding-left:2rem;padding-right:120px;position:relative}
 .edu-code-block .code-line.blank{height:1.9rem}
 .edu-code-block .comment{color:#6a9955;font-style:italic}
 .edu-code-block .keyword{color:#569cd6;font-weight:600}
 .edu-code-block .variable{color:#4ec9b0}
 .edu-code-block .key{color:#9cdcfe}
 .edu-code-block .string{color:#ce9178}
-.edu-inline-logo{width:24px;height:24px;object-fit:contain;border-radius:4px;border:1px solid rgba(0,217,255,0.3);margin-right:0.5rem;vertical-align:middle;background:rgba(255,255,255,0.9);padding:2px}
+.edu-inline-logo{width:96px;height:96px;object-fit:contain;border-radius:4px;border:1px solid rgba(0,217,255,0.3);margin:0;vertical-align:middle;background:rgba(255,255,255,0.9);padding:2px;position:absolute;right:10px;top:50%;transform:translateY(-50%)}
+.aims-logo{right:10px}
 .status-badge{display:inline-flex;align-items:center;gap:0.3rem;padding:0.2rem 0.6rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
 .status-badge.completed{background:rgba(52,211,153,0.15);color:#34d399;border-color:rgba(52,211,153,0.3)}
 .edu-code-block .cursor-line .cursor{color:var(--accent);animation:blink 1s infinite}
