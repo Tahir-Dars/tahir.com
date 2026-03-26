@@ -311,8 +311,7 @@ document.addEventListener('keydown', function(e) {
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
-  // Use saved preference first; otherwise follow system preference.
-  const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  // Use saved preference first; otherwise default to light.
   const savedTheme = localStorage.getItem('theme');
 
   const applyTheme = (theme) => {
@@ -325,7 +324,7 @@ if (themeToggle) {
 
   const getPreferredTheme = () => {
     if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    return systemThemeQuery.matches ? 'dark' : 'light';
+    return 'light';
   };
 
   applyTheme(getPreferredTheme());
@@ -337,11 +336,6 @@ if (themeToggle) {
     localStorage.setItem('theme', nextTheme);
   });
 
-  // Keep in sync with OS theme changes when user has no saved choice.
-  systemThemeQuery.addEventListener('change', (event) => {
-    if (localStorage.getItem('theme')) return;
-    applyTheme(event.matches ? 'dark' : 'light');
-  });
 }
 
 // Screen Maximize/Minimize Toggle

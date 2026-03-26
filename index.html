@@ -8,8 +8,7 @@
     (function() {
       try {
         const savedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : (systemDark ? 'dark' : 'light');
+        const theme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : 'light';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (error) {
         document.documentElement.setAttribute('data-theme', 'light');
