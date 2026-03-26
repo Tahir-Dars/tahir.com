@@ -68,6 +68,85 @@
 [data-theme="light"] .education-card{background:var(--card);border-color:rgba(0,217,255,0.25)}
 [data-theme="light"] .section-divider{background:linear-gradient(90deg,transparent,rgba(0,217,255,0.35),transparent)}
 [data-theme="light"] .site-footer{border-top-color:rgba(0,217,255,0.25)}
+[data-theme="light"] .hero{background:linear-gradient(180deg,rgba(0,217,255,0.05) 0%,transparent 55%)}
+[data-theme="light"] .hero-left{border-right:1px solid rgba(0,217,255,0.15)}
+[data-theme="light"] .site-header{box-shadow:0 8px 28px rgba(17,24,39,0.08)}
+[data-theme="light"] .logo{background:linear-gradient(135deg,#0ea5c8,#ff006e);-webkit-background-clip:text;background-clip:text}
+
+[data-theme="light"] .card,
+[data-theme="light"] .education-card,
+[data-theme="light"] .cert-card,
+[data-theme="light"] .profile-card,
+[data-theme="light"] .code-editor,
+[data-theme="light"] .concepts-terminal,
+[data-theme="light"] .package-json,
+[data-theme="light"] .git-log,
+[data-theme="light"] .api-endpoint,
+[data-theme="light"] .achievements-terminal,
+[data-theme="light"] .education-notepad,
+[data-theme="light"] .about-terminal,
+[data-theme="light"] .footer-terminal{box-shadow:0 10px 30px rgba(17,24,39,0.08);border-color:rgba(0,217,255,0.22)}
+
+[data-theme="light"] .card{background:linear-gradient(145deg,#f6fbff,#eef7ff)}
+[data-theme="light"] .cert-card{background:linear-gradient(145deg,#f5fbff,#edf7ff)}
+[data-theme="light"] .cert-entry{background:#f8fcff;border-color:rgba(0,217,255,0.18)}
+[data-theme="light"] .cert-entry:hover{background:#eef8ff;border-color:rgba(0,217,255,0.35)}
+
+[data-theme="light"] .about-terminal-header,
+[data-theme="light"] .terminal-header,
+[data-theme="light"] .json-header,
+[data-theme="light"] .git-header,
+[data-theme="light"] .api-header,
+[data-theme="light"] .achieve-header,
+[data-theme="light"] .editor-header,
+[data-theme="light"] .notepad-header,
+[data-theme="light"] .profile-card-header{background:#e9f6ff;border-bottom:1px solid rgba(0,217,255,0.2)}
+
+[data-theme="light"] .terminal-title,
+[data-theme="light"] .json-filename,
+[data-theme="light"] .git-title,
+[data-theme="light"] .profile-filename,
+[data-theme="light"] .terminal-line,
+[data-theme="light"] .commit-details p,
+[data-theme="light"] .footer-output,
+[data-theme="light"] .line-num,
+[data-theme="light"] .prompt-separator,
+[data-theme="light"] .prompt-symbol{color:#55607a}
+
+[data-theme="light"] .about-terminal-body .json-key,
+[data-theme="light"] .json-key,
+[data-theme="light"] .api-key{color:#0f766e}
+[data-theme="light"] .about-terminal-body .json-string,
+[data-theme="light"] .json-string,
+[data-theme="light"] .api-string{color:#1d4ed8}
+[data-theme="light"] .about-terminal-body .json-boolean{color:#be123c}
+[data-theme="light"] .about-terminal-body .json-colon,
+[data-theme="light"] .about-terminal-body .json-comma,
+[data-theme="light"] .about-terminal-body .json-brace,
+[data-theme="light"] .json-colon,
+[data-theme="light"] .json-comma,
+[data-theme="light"] .json-brace,
+[data-theme="light"] .api-colon,
+[data-theme="light"] .api-comma,
+[data-theme="light"] .api-brace{color:#64748b}
+
+[data-theme="light"] .commit-hash{background:rgba(255,0,110,0.08);color:#be185d}
+[data-theme="light"] .commit-tag,
+[data-theme="light"] .cert-date,
+[data-theme="light"] .cert-skill,
+[data-theme="light"] .tool-badge,
+[data-theme="light"] .tech-badge{background:rgba(0,217,255,0.08);border-color:rgba(0,217,255,0.22);color:#0b7f99}
+
+[data-theme="light"] .api-link{background:#f6fbff;border-color:rgba(0,217,255,0.22)}
+[data-theme="light"] .api-link:hover{background:#edf8ff;border-color:rgba(0,217,255,0.4)}
+[data-theme="light"] .api-link .link-label{color:#5a5a6d}
+[data-theme="light"] .api-link .link-value{color:#0b7f99}
+[data-theme="light"] .api-link:hover .link-value{color:#0b7f99}
+
+[data-theme="light"] .site-footer{background:#f7fbff;color:#4b5563}
+[data-theme="light"] .footer-terminal{background:#eef7ff}
+[data-theme="light"] .prompt-user{color:#0f766e}
+[data-theme="light"] .prompt-path{color:#2563eb}
 
 /* Theme Toggle Button */
 .theme-toggle{position:fixed;top:4.6rem;right:1rem;z-index:1600;width:42px;height:42px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(0,217,255,0.45);border-radius:50%;cursor:pointer;transition:all 0.3s ease;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 8px 24px rgba(0,0,0,0.35)}
