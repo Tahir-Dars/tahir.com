@@ -66,13 +66,6 @@ document.addEventListener('DOMContentLoaded',function(){
     const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     scrollProgress = (window.scrollY / windowHeight) * 100;
     
-    // Dynamic navbar background based on scroll
-    if(window.scrollY > 100) {
-      siteHeader.classList.add('scrolled');
-    } else {
-      siteHeader.classList.remove('scrolled');
-    }
-    
     highlightActiveLink();
   });
 
@@ -131,20 +124,6 @@ document.addEventListener('DOMContentLoaded',function(){
       this.style.boxShadow = '0 0 15px rgba(255, 0, 110, 0.3)';
     });
   }
-
-  // Navbar glow effect on scroll
-  window.addEventListener('scroll', () => {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    if(window.scrollY > 50) {
-      siteHeader.style.boxShadow = isLight
-        ? `0 8px 28px rgba(14, 165, 233, ${Math.min(window.scrollY / 900, 0.18)})`
-        : `0 8px 40px rgba(255, 0, 110, ${Math.min(window.scrollY / 500, 0.3)})`;
-    } else {
-      siteHeader.style.boxShadow = isLight
-        ? '0 8px 24px rgba(17,24,39,0.08)'
-        : '0 8px 32px rgba(0,0,0,0.3)';
-    }
-  });
 
   // Scroll effect for left side details
   const detailsEl = document.getElementById('details');

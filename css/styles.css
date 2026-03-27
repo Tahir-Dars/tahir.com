@@ -187,7 +187,6 @@ html,body{height:100%;margin:0;padding-top:4rem;background:var(--bg);color:var(-
 .container{max-width:var(--container);margin:0 auto;padding:2rem}
 .site-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);background:rgba(10,14,39,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,217,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
 .site-header.scrolled{background:rgba(10,14,39,0.85);box-shadow:0 8px 40px rgba(0,217,255,0.15)}
-.site-header.scrolled .container{padding:0.75rem 2rem}
 .site-header.scrolled .logo{color:var(--accent)}
 .site-header.scrolled .nav a{color:var(--text)}
 .site-header.scrolled .nav a:hover{background:rgba(0,217,255,0.12);border-bottom:2px solid var(--accent)}
