@@ -295,35 +295,51 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Theme Toggle Functionality
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-  // Use saved preference first; otherwise default to light.
-  const savedTheme = localStorage.getItem('theme');
+// Theme Switch (premium pill)
+(() => {
+  const THEME_KEY = 'theme';
+  const themeSwitch = document.getElementById('themeSwitch');
 
-  const applyTheme = (theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    const isDark = theme === 'dark';
-    themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-    themeToggle.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  const getSystemTheme = () => {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
   };
 
-  const getPreferredTheme = () => {
-    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    return 'light';
+  const getStoredTheme = () => {
+    try {
+      const stored = localStorage.getItem(THEME_KEY);
+      return stored === 'dark' || stored === 'light' ? stored : null;
+    } catch {
+      return null;
+    }
   };
 
-  applyTheme(getPreferredTheme());
+  const applyTheme = (theme, { persist } = { persist: false }) => {
+    const nextTheme = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
 
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(nextTheme);
-    localStorage.setItem('theme', nextTheme);
-  });
+    if (themeSwitch) themeSwitch.checked = nextTheme === 'dark';
 
-}
+    if (persist) {
+      try {
+        localStorage.setItem(THEME_KEY, nextTheme);
+      } catch {
+        // Ignore storage errors (private mode, blocked storage, etc.)
+      }
+    }
+  };
+
+  // Initialize
+  const initialTheme = getStoredTheme() ?? getSystemTheme();
+  applyTheme(initialTheme, { persist: false });
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener('change', () => {
+      applyTheme(themeSwitch.checked ? 'dark' : 'light', { persist: true });
+    });
+  }
+})();
 
 // Screen Maximize/Minimize Toggle
 const screenToggle = document.getElementById('screenToggle');
