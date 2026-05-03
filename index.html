@@ -30,14 +30,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">Muhammad Tahir Dars</div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false">Menu</button>
+      <button id="navToggle" class="nav-toggle pressable" aria-expanded="false">Menu</button>
       <nav id="siteNav" class="nav" >
         <ul>
           <li><a href="#skills">Programming</a></li>
           <li><a href="#tools">Tools</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#resume" class="resume-btn">Download Resume</a></li>
+          <li><a href="#resume" class="resume-btn pressable">Download Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -311,7 +311,7 @@
     <!-- Certificate Modal -->
     <div id="certModal" class="cert-modal">
       <div class="cert-modal-content">
-        <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+        <button class="cert-modal-close pressable" onclick="closeCertModal()" title="Close certificate viewer" aria-label="Close certificate viewer">&times;</button>
         <div class="cert-modal-body">
           <iframe id="certModalFrame" src="" frameborder="0"></iframe>
           <img id="certModalImage" src="" alt="Certificate">
@@ -578,7 +578,7 @@
     </div>
   </footer>
 
-  <button id="screenToggle" class="screen-toggle" type="button" title="Maximize screen" aria-label="Maximize screen" aria-pressed="false">
+  <button id="screenToggle" class="screen-toggle pressable" type="button" title="Maximize screen" aria-label="Maximize screen" aria-pressed="false">
     <span class="maximize-icon">⛶</span>
     <span class="minimize-icon">🗗</span>
   </button>
