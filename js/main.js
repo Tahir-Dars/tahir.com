@@ -331,7 +331,7 @@ document.addEventListener('keydown', function(e) {
   };
 
   // Initialize
-  const initialTheme = getStoredTheme() ?? getSystemTheme();
+  const initialTheme = getStoredTheme() ?? 'dark';
   applyTheme(initialTheme, { persist: false });
 
   if (themeSwitch) {

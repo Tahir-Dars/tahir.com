@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,16 +9,15 @@
       try {
         const THEME_KEY = 'theme';
         const savedTheme = localStorage.getItem(THEME_KEY);
-        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = (savedTheme === 'light' || savedTheme === 'dark')
           ? savedTheme
-          : (systemPrefersDark ? 'dark' : 'light');
+          : 'dark';
 
         document.documentElement.setAttribute('data-theme', theme);
         document.documentElement.classList.toggle('dark', theme === 'dark');
       } catch (error) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
       }
     })();
   </script>
