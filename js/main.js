@@ -225,10 +225,34 @@ document.addEventListener('DOMContentLoaded',function(){
     
     observer.observe(profileCard);
     
-    // Continuous subtle glow pulse
-    setInterval(() => {
+    // Continuous subtle glow pulse (pause when tab is hidden)
+    const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    let glowTimer = null;
+
+    const updateGlow = () => {
       profileCard.style.boxShadow = `0 0 ${Math.sin(Date.now() / 500) * 10 + 50}px rgba(0,217,255,0.3), 0 12px 48px rgba(0,0,0,0.4)`;
-    }, 50);
+    };
+
+    const startGlow = () => {
+      if (prefersReducedMotion || document.hidden) return;
+      if (glowTimer) return;
+      updateGlow();
+      glowTimer = setInterval(updateGlow, 100);
+    };
+
+    const stopGlow = () => {
+      if (!glowTimer) return;
+      clearInterval(glowTimer);
+      glowTimer = null;
+    };
+
+    startGlow();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopGlow();
+      else startGlow();
+    });
+    window.addEventListener('pagehide', stopGlow);
   }
 
 
