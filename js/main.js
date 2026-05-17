@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded',function(){
+  // Footer: dynamic year + last updated
+  const footerCommand = document.getElementById('footerCommand');
+  const footerOutput = document.getElementById('footerOutput');
+  const footerLastUpdated = document.getElementById('footerLastUpdated');
+
+  const currentYear = String(new Date().getFullYear());
+  if (footerCommand) footerCommand.textContent = `echo "© ${currentYear} Muhammad Tahir — Built with ☕ Java & 💻 Passion"`;
+  if (footerOutput) footerOutput.textContent = `© ${currentYear} Muhammad Tahir — Built with ☕ Java & 💻 Passion`;
+
+  if (footerLastUpdated) {
+    const lastModified = new Date(document.lastModified);
+    if (!Number.isNaN(lastModified.getTime())) {
+      footerLastUpdated.textContent = `Last updated: ${lastModified.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' })}`;
+    } else {
+      footerLastUpdated.textContent = 'Last updated: --';
+    }
+  }
+
   const navToggle=document.getElementById('navToggle');
   const siteNav=document.getElementById('siteNav');
   const siteHeader=document.querySelector('.site-header');
@@ -276,6 +294,27 @@ document.head.appendChild(style);
 // Certificate Modal Functions
 let lastFocusedElementBeforeCertModal = null;
 
+function getFocusableElements(container) {
+  if (!container) return [];
+  const focusableSelectors = [
+    'a[href]',
+    'button:not([disabled])',
+    'input:not([disabled])',
+    'select:not([disabled])',
+    'textarea:not([disabled])',
+    'iframe',
+    '[tabindex]:not([tabindex="-1"])'
+  ];
+
+  return Array.from(container.querySelectorAll(focusableSelectors.join(',')))
+    .filter((el) => {
+      const isHidden = el.getAttribute('aria-hidden') === 'true';
+      if (isHidden) return false;
+      // Exclude elements not currently visible (e.g., display:none)
+      return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    });
+}
+
 function openCertModal(src, title) {
   const modal = document.getElementById('certModal');
   const modalFrame = document.getElementById('certModalFrame');
@@ -290,10 +329,12 @@ function openCertModal(src, title) {
   const decodedSrc = decodeURIComponent(src);
   if (decodedSrc.toLowerCase().endsWith('.pdf')) {
     modalFrame.src = decodedSrc;
+    modalFrame.title = title ? `${title} certificate document` : 'Certificate document';
     modalFrame.style.display = 'block';
     modalImage.style.display = 'none';
   } else {
     modalImage.src = decodedSrc;
+    modalImage.alt = title ? `${title} certificate` : 'Certificate';
     modalImage.style.display = 'block';
     modalFrame.style.display = 'none';
   }
@@ -335,9 +376,34 @@ document.addEventListener('click', function(e) {
 
 // Close modal on Escape key
 document.addEventListener('keydown', function(e) {
+  const modal = document.getElementById('certModal');
+  const isModalOpen = !!(modal && modal.classList.contains('active'));
+  if (!isModalOpen) return;
+
   if (e.key === 'Escape') {
-    const modal = document.getElementById('certModal');
-    if (modal && modal.classList.contains('active')) closeCertModal();
+    closeCertModal();
+    return;
+  }
+
+  if (e.key === 'Tab') {
+    const focusables = getFocusableElements(modal);
+    if (focusables.length === 0) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey) {
+      if (active === first || !modal.contains(active)) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   }
 });
 
