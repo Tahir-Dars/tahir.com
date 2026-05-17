@@ -476,6 +476,7 @@ main{display:flex;flex-direction:column;gap:var(--space-8)}
 .site-header.scrolled .resume-btn{background:#7dd3fc;color:#000;box-shadow:var(--shadow-float);font-weight:700}
 .site-header.scrolled .resume-btn:hover{box-shadow:var(--shadow-modal)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);padding:var(--space-4) 0}
+.header-inner{position:relative}
 .logo{font-weight:800;letter-spacing:2px;font-size:var(--fs-20);background:linear-gradient(135deg,var(--accent),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:all 0.3s ease}
 .nav{display:block;margin-left:auto}
 .nav ul{display:flex;gap:var(--space-2);list-style:none;padding:var(--space-1);margin:0;align-items:center;border-radius:12px;background:rgba(255,255,255,0.02);box-shadow:inset 0 0 0 1px rgba(0,217,255,0.10)}
@@ -490,10 +491,17 @@ main{display:flex;flex-direction:column;gap:var(--space-8)}
 .resume-btn:active{transform:translateY(-1px);filter:brightness(0.95)}
 .resume-btn:active{box-shadow:var(--shadow-press)}
 .resume-btn[aria-disabled="true"]{opacity:0.55;pointer-events:none}
-.nav-toggle{display:none;background:none;border:1px solid rgba(0,217,255,0.3);color:var(--accent);padding:var(--space-2) var(--space-3);border-radius:6px;cursor:pointer;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:var(--space-2);line-height:1.2}
+.nav-toggle{display:none;background:none;border:1px solid rgba(0,217,255,0.3);color:var(--accent);padding:var(--space-2) var(--space-3);border-radius:6px;cursor:pointer;transition:all 0.3s ease;align-items:center;gap:var(--space-2);line-height:1.2}
 .nav-toggle:hover{background:var(--color-primary-bg);box-shadow:var(--shadow-card)}
 .nav-toggle:active{background:color-mix(in srgb, var(--color-primary) 18%, transparent)}
 .nav-toggle:disabled{opacity:0.55;cursor:not-allowed}
+
+.nav-toggle__icon{display:grid;gap:5px}
+.nav-toggle__icon span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;transition:transform 200ms ease,opacity 200ms ease}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* =========================================
   Visual signifiers: pressed / disabled / grouped-actives
@@ -879,9 +887,14 @@ button[disabled]:hover{transform:none;filter:none;box-shadow:none}
   .hero-wrapper{flex-direction:column;height:auto}
   .hero-left{width:100%;height:auto;position:relative;padding:2rem;border-right:none;border-bottom:1px solid rgba(0,217,255,0.1)}
   .hero-right{width:100%;overflow:visible;padding:2rem}
-  .nav ul{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg-secondary);backdrop-filter:blur(20px);padding:1rem;border-bottom:1px solid rgba(0,217,255,0.2);gap:0.5rem;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,217,255,0.10)}
-  .nav-toggle{display:none}
-  .nav.open ul{display:flex}
+  .nav-toggle{display:inline-flex}
+
+  .nav{position:absolute;top:100%;left:0;right:0;margin-left:0;z-index:1200;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:max-height 260ms ease,opacity 200ms ease,transform 260ms ease}
+  .nav.open{max-height:520px;opacity:1;transform:translateY(0);pointer-events:auto}
+
+  .nav ul{display:flex;flex-direction:column;position:relative;background:var(--bg-secondary);backdrop-filter:blur(20px);padding:1rem;border:1px solid rgba(0,217,255,0.2);gap:0.5rem;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,217,255,0.10)}
+  .nav a{width:100%}
+  .nav li{width:100%}
   .container{padding:var(--space-6)}
   .section h2{font-size:var(--fs-24)}
   .projects-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -913,6 +926,11 @@ button[disabled]:hover{transform:none;filter:none;box-shadow:none}
   .about-terminal-body{padding:1rem;font-size:0.75rem;line-height:1.8}
   .about-terminal-body .json-line.indent{padding-left:1.5rem}
   .footer-terminal{font-size:0.75rem;padding:0.8rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nav{transition:none}
+  .nav-toggle__icon span{transition:none}
 }
 
 /* Medium Phones (480px - 600px) */

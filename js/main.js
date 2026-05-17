@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded',function(){
   const siteNav=document.getElementById('siteNav');
   const siteHeader=document.querySelector('.site-header');
   const logo=document.querySelector('.logo');
-  const navLinks=document.querySelectorAll('.nav a:not(.resume-btn)');
+  const navLinks=document.querySelectorAll('.nav a');
 
   // Keep logos visible even if external icon CDNs fail temporarily
   const logoSelectors = '.lang-badge img, .tool-badge img, .api-link img, .edu-inline-logo';
@@ -49,6 +49,25 @@ document.addEventListener('DOMContentLoaded',function(){
         navListItems.forEach((item, index) => {
           item.style.animation = `slideInUp 0.4s ease ${index * 0.1}s both`;
         });
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!siteNav.classList.contains('open')) return;
+      const clickedInsideNav = siteNav.contains(event.target);
+      const clickedToggle = navToggle.contains(event.target);
+      if (!clickedInsideNav && !clickedToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        siteNav.classList.remove('open');
+      }
+    });
+
+    // Ensure menu is closed when switching to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 767 && siteNav.classList.contains('open')) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        siteNav.classList.remove('open');
       }
     });
   }
@@ -104,6 +123,12 @@ document.addEventListener('DOMContentLoaded',function(){
             navToggle.setAttribute('aria-expanded', 'false');
             siteNav.classList.remove('open');
           }
+        }
+      } else {
+        // Non-hash links (e.g., resume download) should also close the mobile menu
+        if(navToggle && siteNav && siteNav.classList.contains('open')) {
+          navToggle.setAttribute('aria-expanded', 'false');
+          siteNav.classList.remove('open');
         }
       }
     });
