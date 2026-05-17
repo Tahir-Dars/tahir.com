@@ -42,10 +42,11 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">Muhammad Tahir Dars</div>
-      <nav id="siteNav" class="nav" >
+      <nav id="siteNav" class="nav" aria-label="Primary">
         <ul>
           <li><a href="#skills">Programming</a></li>
           <li><a href="#tools">Tools</a></li>
@@ -57,7 +58,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="hero">
       <div class="hero-wrapper">
         <div class="hero-left">
@@ -205,7 +206,7 @@
             <div class="terminal-line output">total 3 certificates found</div>
             <div class="terminal-line blank"></div>
             
-            <div class="cert-entry" onclick="openCertModal('intro-to-java-datacamp.pdf', 'Introduction to Java')">
+            <button type="button" class="cert-entry pressable" onclick="openCertModal('intro-to-java-datacamp.pdf', 'Introduction to Java')" aria-label="Open certificate: Introduction to Java">
               <div class="terminal-line prompt">$ cat java_certification.md</div>
               <div class="cert-content">
                 <div class="cert-row">
@@ -230,9 +231,9 @@
                   <span class="cert-value status">✓ VERIFIED</span>
                 </div>
               </div>
-            </div>
+            </button>
             
-            <div class="cert-entry" onclick="openCertModal('datacamp-intro-to-github.pdf', 'Introduction to GitHub')">
+            <button type="button" class="cert-entry pressable" onclick="openCertModal('datacamp-intro-to-github.pdf', 'Introduction to GitHub')" aria-label="Open certificate: Introduction to GitHub">
               <div class="terminal-line prompt">$ cat github_certification.md</div>
               <div class="cert-content">
                 <div class="cert-row">
@@ -257,9 +258,9 @@
                   <span class="cert-value status">✓ VERIFIED</span>
                 </div>
               </div>
-            </div>
+            </button>
             
-            <div class="cert-entry" onclick="openCertModal('cloud-computing.png', 'Understanding Cloud Computing')">
+            <button type="button" class="cert-entry pressable" onclick="openCertModal('cloud-computing.png', 'Understanding Cloud Computing')" aria-label="Open certificate: Understanding Cloud Computing">
               <div class="terminal-line prompt">$ cat cloud_certification.md</div>
               <div class="cert-content">
                 <div class="cert-row">
@@ -284,7 +285,7 @@
                   <span class="cert-value status">✓ VERIFIED</span>
                 </div>
               </div>
-            </div>
+            </button>
             
             <div class="terminal-line blank"></div>
             <div class="terminal-line prompt">$ <span class="cursor">|</span></div>
@@ -294,11 +295,12 @@
     </section>
 
     <!-- Certificate Modal -->
-    <div id="certModal" class="cert-modal">
+    <div id="certModal" class="cert-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="certModalTitle">
       <div class="cert-modal-content">
+        <h2 id="certModalTitle" class="sr-only">Certificate</h2>
         <button class="cert-modal-close pressable" onclick="closeCertModal()" title="Close certificate viewer" aria-label="Close certificate viewer">&times;</button>
         <div class="cert-modal-body">
-          <iframe id="certModalFrame" src="" frameborder="0"></iframe>
+          <iframe id="certModalFrame" src="" frameborder="0" title="Certificate document"></iframe>
           <img id="certModalImage" src="" alt="Certificate">
         </div>
       </div>

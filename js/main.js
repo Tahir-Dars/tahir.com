@@ -250,10 +250,17 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Certificate Modal Functions
+let lastFocusedElementBeforeCertModal = null;
+
 function openCertModal(src, title) {
   const modal = document.getElementById('certModal');
   const modalFrame = document.getElementById('certModalFrame');
   const modalImage = document.getElementById('certModalImage');
+  const modalTitle = document.getElementById('certModalTitle');
+  const closeButton = modal?.querySelector('.cert-modal-close');
+
+  lastFocusedElementBeforeCertModal = document.activeElement;
+  if (modalTitle && title) modalTitle.textContent = title;
   
   // Check if it's a PDF or image
   const decodedSrc = decodeURIComponent(src);
@@ -268,7 +275,13 @@ function openCertModal(src, title) {
   }
   
   modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
+  if (closeButton) {
+    // Ensure focus moves into the modal for keyboard users
+    closeButton.focus();
+  }
 }
 
 function closeCertModal() {
@@ -277,9 +290,15 @@ function closeCertModal() {
   const modalImage = document.getElementById('certModalImage');
   
   modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
   modalFrame.src = '';
   modalImage.src = '';
   document.body.style.overflow = '';
+
+  if (lastFocusedElementBeforeCertModal && typeof lastFocusedElementBeforeCertModal.focus === 'function') {
+    lastFocusedElementBeforeCertModal.focus();
+  }
+  lastFocusedElementBeforeCertModal = null;
 }
 
 // Close modal on outside click
@@ -293,7 +312,8 @@ document.addEventListener('click', function(e) {
 // Close modal on Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    closeCertModal();
+    const modal = document.getElementById('certModal');
+    if (modal && modal.classList.contains('active')) closeCertModal();
   }
 });
 
