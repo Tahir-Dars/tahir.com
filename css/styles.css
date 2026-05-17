@@ -573,6 +573,7 @@ button[disabled]:hover{transform:none;filter:none;box-shadow:none}
 .section h2{font-size:var(--fs-24);margin:0 0 var(--space-6) 0;color:var(--accent);font-weight:800;letter-spacing:0.5px;position:relative;display:inline-block}
 .section h2::after{content:'';position:absolute;bottom:calc(-1 * var(--space-3));left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--accent),transparent);border-radius:2px}
 #about{scroll-margin-top:5rem}
+#education{scroll-margin-top:5rem}
 #skills{scroll-margin-top:5rem}
 #tools{scroll-margin-top:5rem}
 #projects{scroll-margin-top:5rem}
