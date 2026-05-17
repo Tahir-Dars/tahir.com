@@ -354,6 +354,7 @@ if (screenToggle) {
   };
 
   screenToggle.addEventListener('click', async () => {
+    screenToggle.classList.add('is-loading');
     try {
       if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
@@ -363,6 +364,7 @@ if (screenToggle) {
     } catch (error) {
       console.warn('Fullscreen toggle failed:', error);
     } finally {
+      screenToggle.classList.remove('is-loading');
       updateScreenToggleState();
     }
   });
