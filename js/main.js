@@ -18,20 +18,22 @@ document.addEventListener('DOMContentLoaded',function(){
     }, { once: true });
   });
   
-  // Mobile menu toggle with smooth animation
-  navToggle.addEventListener('click',()=>{
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    siteNav.classList.toggle('open');
-    
-    // Animate nav links entrance
-    if(siteNav.classList.contains('open')) {
-      const navListItems = siteNav.querySelectorAll('li');
-      navListItems.forEach((item, index) => {
-        item.style.animation = `slideInUp 0.4s ease ${index * 0.1}s both`;
-      });
-    }
-  });
+  // Mobile menu toggle (only if the toggle button exists)
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('open');
+
+      // Animate nav links entrance
+      if (siteNav.classList.contains('open')) {
+        const navListItems = siteNav.querySelectorAll('li');
+        navListItems.forEach((item, index) => {
+          item.style.animation = `slideInUp 0.4s ease ${index * 0.1}s both`;
+        });
+      }
+    });
+  }
 
   // Active link highlighting based on scroll position
   const sections = document.querySelectorAll('section[id]');
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded',function(){
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           
           // Close mobile menu if open
-          if(siteNav.classList.contains('open')) {
+          if(navToggle && siteNav && siteNav.classList.contains('open')) {
             navToggle.setAttribute('aria-expanded', 'false');
             siteNav.classList.remove('open');
           }
@@ -160,7 +162,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // Add keyboard navigation support
   document.addEventListener('keydown', function(e) {
     // Close mobile menu on Escape
-    if(e.key === 'Escape' && siteNav.classList.contains('open')) {
+    if(navToggle && siteNav && e.key === 'Escape' && siteNav.classList.contains('open')) {
       navToggle.setAttribute('aria-expanded', 'false');
       siteNav.classList.remove('open');
     }
