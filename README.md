@@ -1,20 +1,20 @@
-PORTFOlIO — Simple responsive portfolio
+# Muhammad Tahir — Portfolio
 
-Files:
-- index.html
-- css/styles.css
-- js/main.js
+This repository contains my personal portfolio website.
 
-Preview locally (from inside the `Portoflio` folder):
+## Live Demo
 
-PowerShell / CMD
-```bash
-python -m http.server 8000
-```
+https://tahir-dars.github.io/tahir.com/
 
-Then open http://localhost:8000 in your browser.
+It highlights:
+- Who I am (Java Backend Developer)
+- My skills & tools
+- Projects
+- Certifications
+- Contact details
 
-Next steps:
-- Replace placeholder text with your name and project links
-- Add images or project pages as needed
-- Want a deployed version? I can add GitHub Pages instructions.
+## Tech
+
+- HTML (single-page layout)
+- CSS (custom styling)
+- JavaScript (interactions)
