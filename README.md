@@ -18,7 +18,3 @@ It highlights:
 - HTML (single-page layout)
 - CSS (custom styling)
 - JavaScript (interactions)
-
-## Get in touch with me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadtahir32)
