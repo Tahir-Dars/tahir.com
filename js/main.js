@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded',function(){
   const footerLastUpdated = document.getElementById('footerLastUpdated');
 
   const currentYear = String(new Date().getFullYear());
-  if (footerCommand) footerCommand.textContent = `echo "© ${currentYear} Muhammad Tahir — Built with ☕ Java & 💻 Passion"`;
-  if (footerOutput) footerOutput.textContent = `© ${currentYear} Muhammad Tahir — Built with ☕ Java & 💻 Passion`;
+  if (footerCommand) footerCommand.textContent = `echo "© ${currentYear} Muhammad Tahir — Built with GPT-5.2, ☕ Java & 💻 Passion"`;
+  if (footerOutput) footerOutput.textContent = `© ${currentYear} Muhammad Tahir — Built with GPT-5.2, ☕ Java & 💻 Passion`;
 
   if (footerLastUpdated) {
     const lastModified = new Date(document.lastModified);
