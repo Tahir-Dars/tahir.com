@@ -680,38 +680,41 @@ button[disabled]:hover{transform:none;filter:none;box-shadow:none}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
 /* Education Section - Coding Notepad Style */
-.education-notepad{margin-top:1.5rem;background:#1e1e1e;border-radius:12px;overflow:hidden;border:1px solid rgba(0,217,255,0.2);box-shadow:var(--shadow-card)}
-.notepad-header{display:flex;align-items:center;justify-content:space-between;padding:0;background:#252526;border-bottom:1px solid #3c3c3c}
+.education-notepad{margin-top:1.5rem;background:linear-gradient(135deg,rgba(17,24,39,0.96),rgba(10,16,32,0.96));border-radius:16px;overflow:hidden;border:1px solid rgba(0,217,255,0.24);box-shadow:0 16px 40px rgba(0,0,0,0.25)}
+.notepad-header{display:flex;align-items:center;justify-content:space-between;padding:0;background:linear-gradient(180deg,#1f2937,#171d2a);border-bottom:1px solid rgba(255,255,255,0.08)}
 .notepad-tabs{display:flex;align-items:center}
-.notepad-tab{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);background:#1e1e1e;color:#fff;font-family:var(--font-mono);font-size:var(--fs-14);border-right:1px solid #3c3c3c;position:relative}
-.notepad-tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent)}
-.notepad-tab.active{background:#1e1e1e}
-.notepad-tab-new{padding:var(--space-3) var(--space-4);color:#858585;font-size:var(--fs-16);cursor:pointer;transition:color 0.3s ease}
+.notepad-tab{display:flex;align-items:center;gap:var(--space-2);padding:0.8rem 1rem;background:transparent;color:#e5e7eb;font-family:var(--font-mono);font-size:var(--fs-14);border-right:1px solid rgba(255,255,255,0.08);position:relative}
+.notepad-tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.notepad-tab.active{background:rgba(0,217,255,0.12);color:#fff}
+.notepad-tab-new{padding:0.8rem 1rem;color:#9ca3af;font-size:var(--fs-16);cursor:pointer;transition:color 0.3s ease}
 .notepad-tab-new:hover{color:var(--accent)}
-.notepad-actions{display:flex;gap:var(--space-2);padding-right:var(--space-4)}
-.notepad-actions .action-dot{width:12px;height:12px;border-radius:50%}
+.notepad-actions{display:flex;gap:var(--space-2);padding-right:1rem}
+.notepad-actions .action-dot{width:11px;height:11px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.15)}
 .notepad-actions .action-dot:nth-child(1){background:#ff5f56}
 .notepad-actions .action-dot:nth-child(2){background:#ffbd2e}
 .notepad-actions .action-dot:nth-child(3){background:#27c93f}
-.notepad-body{display:flex;min-height:380px}
-.notepad-sidebar{background:#1e1e1e;border-right:1px solid #3c3c3c;padding:1rem 0}
-.notepad-sidebar .line-numbers{display:flex;flex-direction:column;padding:0 1rem;color:#858585;font-family:var(--font-mono);font-size:var(--fs-14);line-height:1.6;text-align:right;user-select:none}
-.notepad-content{flex:1;padding:1rem 1.5rem;overflow-x:auto}
-.edu-code-block .code-line{font-family:var(--font-mono);font-size:var(--fs-14);line-height:1.6;display:flex;align-items:center;gap:0.5rem;padding:0 0.5rem;margin:0 -0.5rem;border-radius:4px;transition:background 0.2s ease}
-.edu-code-block .code-line:hover{background:rgba(255,255,255,0.05)}
-.edu-code-block .code-line.indent{padding-left:2rem;padding-right:120px;position:relative}
-.edu-code-block .code-line.with-logo{padding-right:120px;position:relative}
-.edu-code-block .code-line.blank{height:1.9rem}
-.edu-code-block .comment{color:#6a9955;font-style:italic}
-.edu-code-block .keyword{color:#569cd6;font-weight:600}
-.edu-code-block .variable{color:#4ec9b0}
-.edu-code-block .key{color:#9cdcfe}
-.edu-code-block .string{color:#ce9178}
-.edu-inline-logo{width:96px;height:96px;object-fit:contain;border-radius:4px;border:1px solid rgba(0,217,255,0.3);margin:0;vertical-align:middle;background:rgba(255,255,255,0.9);padding:var(--space-1);position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%)}
-.aims-logo{right:var(--space-3)}
-.status-badge{display:inline-flex;align-items:center;gap:var(--space-1);padding:var(--space-1) var(--space-2);border-radius:4px;font-size:var(--fs-12);font-weight:600;background:var(--color-primary-bg);color:var(--color-primary);border:1px solid color-mix(in srgb, var(--color-primary) 30%, transparent)}
-.status-badge.completed{background:color-mix(in srgb, var(--color-success) 15%, transparent);color:var(--color-success);border-color:color-mix(in srgb, var(--color-success) 30%, transparent)}
-.edu-code-block .cursor-line .cursor{color:var(--accent);animation:blink 1s infinite}
+.notepad-body{display:flex;min-height:400px;background:rgba(255,255,255,0.02)}
+.notepad-sidebar{background:rgba(255,255,255,0.03);border-right:1px solid rgba(255,255,255,0.06);padding:1rem 0}
+.notepad-sidebar .line-numbers{display:flex;flex-direction:column;padding:0 1rem;color:#7c8798;font-family:var(--font-mono);font-size:var(--fs-14);line-height:1.7;text-align:right;user-select:none}
+.notepad-content{flex:1;padding:1.15rem 1.35rem;overflow-x:auto}
+.education-showcase{display:flex;flex-direction:column;gap:1rem}
+.education-showcase__intro{padding-bottom:0.6rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.education-showcase__eyebrow{margin:0 0 0.35rem;font-size:0.74rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:#7dd3fc}
+.education-showcase__intro h3{margin:0;font-size:1rem;font-weight:700;color:#f8fafc}
+.education-grid-modern{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.education-card-modern{background:linear-gradient(135deg,rgba(15,23,42,0.92),rgba(30,41,59,0.88));border:1px solid rgba(125,211,252,0.18);border-radius:14px;padding:1rem;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04)}
+.education-card-modern--secondary{background:linear-gradient(135deg,rgba(17,24,39,0.96),rgba(15,23,42,0.9))}
+.education-card-modern__top{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:0.85rem}
+.education-pill{display:inline-flex;align-items:center;padding:0.35rem 0.65rem;border-radius:999px;background:rgba(125,211,252,0.14);color:#7dd3fc;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.education-pill--complete{background:rgba(74,222,128,0.14);color:#86efac}
+.education-logo{width:56px;height:56px;object-fit:contain;border-radius:10px;background:#fff;padding:0.3rem;border:1px solid rgba(125,211,252,0.2);box-shadow:0 8px 20px rgba(0,0,0,0.16)}
+.education-card-modern__body h4{margin:0 0 0.3rem;font-size:0.95rem;color:#f8fafc}
+.education-degree{margin:0 0 0.75rem;color:#cbd5e1;font-size:0.9rem}
+.education-meta{list-style:none;padding:0;margin:0;display:grid;gap:0.45rem}
+.education-meta li{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:0.82rem;color:#94a3b8}
+.education-meta strong{color:#e2e8f0;font-weight:600;text-align:right}
+@media (max-width:768px){.education-grid-modern{grid-template-columns:1fr}}
+@media (max-width:480px){.education-card-modern__top{flex-direction:column;align-items:flex-start}.education-logo{width:48px;height:48px}}
 
 /* Legacy Education Grid Support */
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
