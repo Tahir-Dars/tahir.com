@@ -356,11 +356,15 @@ function openCertModal(src, title) {
     modalFrame.src = decodedSrc;
     modalFrame.title = title ? `${title} certificate document` : 'Certificate document';
     modalFrame.style.display = 'block';
+    modalFrame.style.width = '100vw';
+    modalFrame.style.height = '100vh';
     modalImage.style.display = 'none';
   } else {
     modalImage.src = decodedSrc;
     modalImage.alt = title ? `${title} certificate` : 'Certificate';
     modalImage.style.display = 'block';
+    modalImage.style.width = '100vw';
+    modalImage.style.height = '100vh';
     modalFrame.style.display = 'none';
   }
   
@@ -391,10 +395,17 @@ function closeCertModal() {
   lastFocusedElementBeforeCertModal = null;
 }
 
-// Close modal on outside click
-document.addEventListener('click', function(e) {
+// Close modal on outside click or Escape
+ document.addEventListener('click', function(e) {
   const modal = document.getElementById('certModal');
   if (e.target === modal) {
+    closeCertModal();
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  const modal = document.getElementById('certModal');
+  if (modal && modal.classList.contains('active') && e.key === 'Escape') {
     closeCertModal();
   }
 });
