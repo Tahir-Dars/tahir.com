@@ -668,6 +668,55 @@ button[disabled]:hover{transform:none;filter:none;box-shadow:none}
 .editor-content .keyword{color:#569cd6}
 .editor-content .class-name{color:#4ec9b0}
 .editor-content .string{color:#ce9178}
+
+/* Java-specific minimalist styling (scoped to .code-editor.java) */
+.code-editor.java{
+  background:var(--bg-secondary);
+  border-radius:12px;
+  padding:0;
+  border:1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
+  box-shadow:var(--shadow-card);
+  overflow:hidden;
+}
+.code-editor.java .editor-header{
+  background:transparent;
+  border-bottom:1px solid color-mix(in srgb, var(--color-primary) 6%, transparent);
+  padding:0.6rem 0.9rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.code-editor.java .editor-header .lang-badge{
+  background:color-mix(in srgb, var(--color-primary) 6%, transparent);
+  color:var(--color-primary-dark);
+  border:1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+  padding:0.28rem 0.6rem;border-radius:8px;font-weight:600;font-size:0.85rem
+}
+.code-editor.java .editor-body{min-height:360px}
+.code-editor.java .editor-content{
+  padding:1rem 1.25rem;
+  background:transparent;
+  border-left:4px solid var(--color-primary-bg);
+}
+.code-editor.java .line-numbers{color:var(--muted);font-family:var(--font-mono);font-size:13px}
+.code-editor.java .editor-content .code-line{font-size:14px;padding:0.18rem 0.6rem;border-radius:6px}
+.code-editor.java .editor-content .code-line:hover{background:rgba(11,17,28,0.02)}
+
+/* Java token colors (minimal, high-contrast) */
+.code-editor.java .comment{color:var(--muted);font-style:italic}
+.code-editor.java .keyword{color:var(--color-primary);font-weight:700}
+.code-editor.java .class-name{color:var(--accent-secondary);font-weight:700}
+.code-editor.java .string{color:var(--color-success)}
+.code-editor.java .variable{color:#7c3aed}
+.code-editor.java .annotation{color:#a78bfa}
+.code-editor.java .number{color:#d946ef}
+.code-editor.java .method{color:var(--text)}
+
+/* Current line highlight */
+.code-editor.java .editor-content .cursor-line{background:color-mix(in srgb, var(--color-primary) 6%, transparent)}
+
+/* Monospace, readable */
+.code-editor.java .editor-content{font-family:var(--font-mono);color:var(--text)}
+
+
 .lang-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:0.25rem 0.7rem;border-radius:6px;font-size:var(--fs-12);font-weight:600;margin-left:auto;transition:all 0.3s ease}
 .lang-badge img{width:1em;height:1em;flex:0 0 auto;object-fit:contain}
 .lang-badge.expert{background:rgba(244,114,182,0.15);color:#f472b6;border:1px solid rgba(244,114,182,0.3)}
